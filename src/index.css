@@ -8,112 +8,359 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* AVOCAT LAW FIRM - ADVANCED DESIGN TOKENS SYSTEM */
     /* Legal Professional Theme - Light Mode */
+    /* ═══════════════════════════════════════════════════════════════ */
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SURFACE & NEUTRAL COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --surface: 0 0% 100%;
+    --surface-raised: 0 0% 98%;
+    --surface-overlay: 0 0% 100%;
+    --card-elevated: 0 0% 99%;
+    
+    --neutral-50: 210 40% 98%;
+    --neutral-100: 214 32% 95%;
+    --neutral-700: 215 16% 47%;
+    --neutral-900: 222 47% 11%;
+    
+    /* Base semantic tokens */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
-
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-
-    /* Navy Blue - Professional & Trustworthy */
-    --primary: 222 47% 15%;
-    --primary-foreground: 0 0% 100%;
     
-    /* Gold Accent - Luxury & Excellence */
-    --accent: 38 92% 50%;
-    --accent-foreground: 222 47% 11%;
-
     --secondary: 214 32% 91%;
     --secondary-foreground: 222 47% 11%;
-
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 214 32% 91%;
+    
     --input: 214 32% 91%;
+    --border: 214 32% 91%;
     --ring: 222 47% 15%;
 
-    --radius: 0.75rem;
+    /* ─────────────────────────────────────────────────────────────── */
+    /* BRAND & PRIMARY COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --brand-primary: 222 47% 15%;
+    --brand-on: 0 0% 100%;
+    --brand-subtle: 222 47% 95%;
+    
+    /* Gold - Luxury & Excellence */
+    --gold: 38 92% 50%;
+    --gold-muted: 38 70% 45%;
+    --gold-light: 45 90% 65%;
+    
+    /* Primary tokens */
+    --primary: 222 47% 15%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 222 47% 25%;
+    
+    /* Accent colors */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --accent-mint: 160 84% 39%;
+    --accent-amber: 38 92% 50%;
+    
+    /* Exclusive/Premium colors */
+    --exclusive: 265 89% 78%;
+    --exclusive-muted: 265 60% 60%;
+    --exclusive-foreground: 222 47% 11%;
+    --exclusive-glow: 265 89% 85%;
+    
+    /* Neon accents */
+    --neon: 160 100% 50%;
+    --neon-glow: 160 100% 70%;
+    --neon-muted: 160 70% 40%;
+    
+    /* Slate neutrals */
+    --slate: 215 25% 27%;
+    --slate-light: 215 20% 65%;
+    --slate-bg: 215 30% 15%;
 
-    /* Sidebar - Professional Navy */
+    /* ─────────────────────────────────────────────────────────────── */
+    /* LEGAL SEMANTIC COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --legal-primary-700: 222 47% 15%;
+    --legal-primary-500: 222 47% 35%;
+    --legal-primary-300: 222 47% 65%;
+    
+    --legal-neutral-900: 222 47% 11%;
+    --legal-neutral-700: 215 16% 47%;
+    --legal-neutral-500: 214 20% 69%;
+    --legal-neutral-300: 214 32% 85%;
+    --legal-neutral-100: 214 32% 95%;
+    
+    --legal-success-500: 142 71% 45%;
+    --legal-warning-500: 38 92% 50%;
+    --legal-danger-500: 0 84% 60%;
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SIDEBAR TOKENS */
+    /* ─────────────────────────────────────────────────────────────── */
     --sidebar-background: 222 47% 15%;
     --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
     --sidebar-primary: 38 92% 50%;
     --sidebar-primary-foreground: 222 47% 11%;
     --sidebar-accent: 222 47% 20%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 222 47% 20%;
     --sidebar-ring: 38 92% 50%;
+    
+    /* Sidebar interaction states */
+    --sidebar-text-muted: 210 30% 70%;
+    --sidebar-hover-foreground: 0 0% 100%;
+    --sidebar-hover-highlight: 38 92% 50%;
+    --sidebar-item-hover-bg: 222 47% 20%;
+    --sidebar-item-active-bg: 222 47% 25%;
+    --sidebar-item-active-shadow: 0 4px 12px hsl(38 92% 50% / 0.3);
+    --sidebar-subitem-hover-bg: 222 47% 18%;
+    --sidebar-subitem-active-bg: 222 47% 22%;
+    --sidebar-subitem-shadow: 0 2px 8px hsl(222 47% 10% / 0.2);
+    
+    /* Sidebar glass/shell effects */
+    --sidebar-shell-blur: blur(12px);
+    --sidebar-shell-shadow: 0 8px 32px hsl(222 47% 10% / 0.4);
+    --sidebar-glass-background: 222 47% 15% / 0.8;
+    --sidebar-glass-border: 222 47% 30% / 0.3;
+    --sidebar-glass-shadow: 0 8px 32px hsl(222 47% 10% / 0.6);
 
-    /* Custom Gradients */
+    /* ─────────────────────────────────────────────────────────────── */
+    /* HEADER TOKENS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --header-surface-gradient: linear-gradient(135deg, hsl(222 47% 15%) 0%, hsl(222 47% 20%) 100%);
+    --header-shell-blur: blur(12px);
+    --header-shell-shadow: 0 4px 24px hsl(222 47% 10% / 0.3);
+    --header-shell-border: 222 47% 25%;
+    --header-glass-background: 0 0% 100% / 0.7;
+    --header-glass-border: 214 32% 91% / 0.5;
+    --header-glass-shadow: 0 4px 24px hsl(222 47% 15% / 0.1);
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* GRADIENTS */
+    /* ─────────────────────────────────────────────────────────────── */
     --gradient-hero: linear-gradient(135deg, hsl(222 47% 15%) 0%, hsl(222 47% 25%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 90% 60%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 32% 98%) 100%);
-    
-    /* Shadows */
+    --gradient-exclusive: linear-gradient(135deg, hsl(265 89% 78%) 0%, hsl(265 60% 60%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(160 100% 50%) 0%, hsl(160 70% 40%) 100%);
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SHADOWS */
+    /* ─────────────────────────────────────────────────────────────── */
     --shadow-sm: 0 1px 2px 0 hsl(222 47% 15% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(222 47% 15% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(222 47% 15% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(222 47% 15% / 0.15);
+    --shadow-2xl: 0 25px 50px -12px hsl(222 47% 15% / 0.25);
     --shadow-gold: 0 0 20px hsl(38 92% 50% / 0.3);
+    --shadow-neon: 0 0 30px hsl(160 100% 50% / 0.4);
+    
+    /* Legal icon shadows */
+    --legal-icon-shadow-soft: 0 2px 8px hsl(222 47% 15% / 0.08);
+    --legal-icon-shadow-hero: 0 8px 24px hsl(38 92% 50% / 0.2);
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* BORDER RADIUS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    
+    /* Legal icon metrics */
+    --legal-icon-corner-inner: 0.25rem;
+    --legal-icon-corner-outer: 0.5rem;
+    --legal-icon-stroke-24: 2px;
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SPACING SCALE */
+    /* ─────────────────────────────────────────────────────────────── */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* DESTRUCTIVE */
+    /* ─────────────────────────────────────────────────────────────── */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
   }
 
   .dark {
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* AVOCAT LAW FIRM - DARK MODE DESIGN TOKENS */
     /* Legal Professional Theme - Dark Mode */
+    /* ═══════════════════════════════════════════════════════════════ */
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SURFACE & NEUTRAL COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --surface: 222 47% 8%;
+    --surface-raised: 222 47% 11%;
+    --surface-overlay: 222 47% 13%;
+    --card-elevated: 222 47% 14%;
+    
+    --neutral-50: 222 47% 16%;
+    --neutral-100: 222 47% 20%;
+    --neutral-700: 215 20% 65%;
+    --neutral-900: 210 40% 98%;
+    
+    /* Base semantic tokens */
     --background: 222 47% 8%;
     --foreground: 210 40% 98%;
-
     --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-
-    --accent: 38 92% 55%;
-    --accent-foreground: 222 47% 11%;
-
+    
     --secondary: 222 47% 16%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 222 47% 16%;
     --muted-foreground: 215 20% 65%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 222 47% 20%;
+    
     --input: 222 47% 20%;
+    --border: 222 47% 20%;
     --ring: 38 92% 55%;
 
+    /* ─────────────────────────────────────────────────────────────── */
+    /* BRAND & PRIMARY COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --brand-primary: 210 40% 98%;
+    --brand-on: 222 47% 11%;
+    --brand-subtle: 222 47% 16%;
+    
+    /* Gold - Luxury & Excellence (brighter in dark mode) */
+    --gold: 38 92% 55%;
+    --gold-muted: 38 80% 50%;
+    --gold-light: 45 90% 70%;
+    
+    /* Primary tokens */
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --primary-glow: 210 40% 95%;
+    
+    /* Accent colors */
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 47% 11%;
+    --accent-mint: 160 84% 45%;
+    --accent-amber: 38 92% 55%;
+    
+    /* Exclusive/Premium colors */
+    --exclusive: 265 89% 85%;
+    --exclusive-muted: 265 70% 65%;
+    --exclusive-foreground: 222 47% 11%;
+    --exclusive-glow: 265 89% 90%;
+    
+    /* Neon accents (brighter in dark) */
+    --neon: 160 100% 60%;
+    --neon-glow: 160 100% 80%;
+    --neon-muted: 160 80% 45%;
+    
+    /* Slate neutrals */
+    --slate: 215 25% 75%;
+    --slate-light: 215 20% 85%;
+    --slate-bg: 215 30% 12%;
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* LEGAL SEMANTIC COLORS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --legal-primary-700: 210 40% 90%;
+    --legal-primary-500: 222 47% 65%;
+    --legal-primary-300: 222 47% 35%;
+    
+    --legal-neutral-900: 210 40% 98%;
+    --legal-neutral-700: 215 20% 65%;
+    --legal-neutral-500: 214 20% 50%;
+    --legal-neutral-300: 214 32% 25%;
+    --legal-neutral-100: 214 32% 16%;
+    
+    --legal-success-500: 142 71% 50%;
+    --legal-warning-500: 38 92% 55%;
+    --legal-danger-500: 0 84% 65%;
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SIDEBAR TOKENS */
+    /* ─────────────────────────────────────────────────────────────── */
     --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
     --sidebar-primary: 38 92% 55%;
     --sidebar-primary-foreground: 222 47% 11%;
     --sidebar-accent: 222 47% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 20%;
     --sidebar-ring: 38 92% 55%;
+    
+    /* Sidebar interaction states */
+    --sidebar-text-muted: 210 30% 60%;
+    --sidebar-hover-foreground: 210 40% 100%;
+    --sidebar-hover-highlight: 38 92% 60%;
+    --sidebar-item-hover-bg: 222 47% 16%;
+    --sidebar-item-active-bg: 222 47% 20%;
+    --sidebar-item-active-shadow: 0 4px 12px hsl(38 92% 55% / 0.4);
+    --sidebar-subitem-hover-bg: 222 47% 14%;
+    --sidebar-subitem-active-bg: 222 47% 18%;
+    --sidebar-subitem-shadow: 0 2px 8px hsl(222 47% 5% / 0.3);
+    
+    /* Sidebar glass/shell effects */
+    --sidebar-shell-blur: blur(12px);
+    --sidebar-shell-shadow: 0 8px 32px hsl(0 0% 0% / 0.6);
+    --sidebar-glass-background: 222 47% 11% / 0.9;
+    --sidebar-glass-border: 222 47% 30% / 0.4;
+    --sidebar-glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.8);
 
-    /* Dark Mode Gradients */
+    /* ─────────────────────────────────────────────────────────────── */
+    /* HEADER TOKENS */
+    /* ─────────────────────────────────────────────────────────────── */
+    --header-surface-gradient: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 15%) 100%);
+    --header-shell-blur: blur(12px);
+    --header-shell-shadow: 0 4px 24px hsl(0 0% 0% / 0.5);
+    --header-shell-border: 222 47% 20%;
+    --header-glass-background: 222 47% 11% / 0.7;
+    --header-glass-border: 222 47% 20% / 0.5;
+    --header-glass-shadow: 0 4px 24px hsl(0 0% 0% / 0.6);
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* GRADIENTS */
+    /* ─────────────────────────────────────────────────────────────── */
     --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 15%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(45 90% 65%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 47% 13%) 100%);
-    
-    /* Dark Shadows */
+    --gradient-exclusive: linear-gradient(135deg, hsl(265 89% 85%) 0%, hsl(265 70% 65%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(160 100% 60%) 0%, hsl(160 80% 45%) 100%);
+
+    /* ─────────────────────────────────────────────────────────────── */
+    /* SHADOWS */
+    /* ─────────────────────────────────────────────────────────────── */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5);
     --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.6);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.7);
     --shadow-gold: 0 0 25px hsl(38 92% 55% / 0.4);
+    --shadow-neon: 0 0 35px hsl(160 100% 60% / 0.5);
+    
+    /* Legal icon shadows */
+    --legal-icon-shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --legal-icon-shadow-hero: 0 8px 24px hsl(38 92% 55% / 0.3);
+
+    /* Border radius, spacing, and metrics remain the same */
+    
+    /* ─────────────────────────────────────────────────────────────── */
+    /* DESTRUCTIVE */
+    /* ─────────────────────────────────────────────────────────────── */
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 210 40% 98%;
   }
 }
 
@@ -138,7 +385,13 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Custom gradient utilities */
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* DESIGN TOKENS UTILITY CLASSES */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* GRADIENT UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
   .gradient-hero {
     background: var(--gradient-hero);
   }
@@ -151,7 +404,21 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
 
-  /* Shadow utilities */
+  .gradient-exclusive {
+    background: var(--gradient-exclusive);
+  }
+
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .gradient-header-surface {
+    background: var(--header-surface-gradient);
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* SHADOW UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
   .shadow-custom-sm {
     box-shadow: var(--shadow-sm);
   }
@@ -168,15 +435,141 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-xl);
   }
 
+  .shadow-custom-2xl {
+    box-shadow: var(--shadow-2xl);
+  }
+
   .shadow-gold {
     box-shadow: var(--shadow-gold);
   }
 
-  /* Text gradient */
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .shadow-legal-icon-soft {
+    box-shadow: var(--legal-icon-shadow-soft);
+  }
+
+  .shadow-legal-icon-hero {
+    box-shadow: var(--legal-icon-shadow-hero);
+  }
+
+  .shadow-sidebar-item {
+    box-shadow: var(--sidebar-item-active-shadow);
+  }
+
+  .shadow-sidebar-subitem {
+    box-shadow: var(--sidebar-subitem-shadow);
+  }
+
+  .shadow-sidebar-glass {
+    box-shadow: var(--sidebar-glass-shadow);
+  }
+
+  .shadow-sidebar-shell {
+    box-shadow: var(--sidebar-shell-shadow);
+  }
+
+  .shadow-header-glass {
+    box-shadow: var(--header-glass-shadow);
+  }
+
+  .shadow-header-shell {
+    box-shadow: var(--header-shell-shadow);
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* TEXT GRADIENT UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
   .text-gradient-gold {
     background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-exclusive {
+    background: var(--gradient-exclusive);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* GLASS MORPHISM UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
+  .glass-sidebar {
+    background: hsl(var(--sidebar-glass-background));
+    border: 1px solid hsl(var(--sidebar-glass-border));
+    box-shadow: var(--sidebar-glass-shadow);
+    backdrop-filter: var(--sidebar-shell-blur);
+  }
+
+  .glass-header {
+    background: hsl(var(--header-glass-background));
+    border: 1px solid hsl(var(--header-glass-border));
+    box-shadow: var(--header-glass-shadow);
+    backdrop-filter: var(--header-shell-blur);
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* LEGAL ICON UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
+  .legal-icon-24 {
+    stroke-width: var(--legal-icon-stroke-24);
+  }
+
+  .legal-icon-corner-inner {
+    border-radius: var(--legal-icon-corner-inner);
+  }
+
+  .legal-icon-corner-outer {
+    border-radius: var(--legal-icon-corner-outer);
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* SPACING UTILITIES */
+  /* ─────────────────────────────────────────────────────────────── */
+  .space-legal-xs {
+    gap: var(--spacing-xs);
+  }
+
+  .space-legal-sm {
+    gap: var(--spacing-sm);
+  }
+
+  .space-legal-md {
+    gap: var(--spacing-md);
+  }
+
+  .space-legal-lg {
+    gap: var(--spacing-lg);
+  }
+
+  .space-legal-xl {
+    gap: var(--spacing-xl);
+  }
+
+  .space-legal-2xl {
+    gap: var(--spacing-2xl);
+  }
+
+  .space-legal-3xl {
+    gap: var(--spacing-3xl);
   }
 }
