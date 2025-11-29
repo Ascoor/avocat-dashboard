@@ -52,6 +52,10 @@ const translations = {
     activeClients: 'عملاء نشطون',
     upcomingSessions: 'الجلسات القادمة',
     casesByStatus: 'القضايا حسب الحالة',
+    monthlySessions: 'الجلسات الشهرية',
+    caseTypeDistribution: 'توزيع القضايا حسب النوع',
+    monthlyPerformance: 'الأداء الشهري',
+    closureRate: 'معدل إغلاق القضايا',
     
     // Cases
     caseNumber: 'رقم القضية',
@@ -128,6 +132,10 @@ const translations = {
     activeClients: 'Active Clients',
     upcomingSessions: 'Upcoming Sessions',
     casesByStatus: 'Cases by Status',
+    monthlySessions: 'Monthly Sessions',
+    caseTypeDistribution: 'Case Type Distribution',
+    monthlyPerformance: 'Monthly Performance',
+    closureRate: 'Case Closure Rate',
     
     // Cases
     caseNumber: 'Case Number',
