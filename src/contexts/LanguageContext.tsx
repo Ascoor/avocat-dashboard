@@ -13,14 +13,38 @@ interface LanguageContextType {
 
 const translations = {
   ar: {
-    // Navigation
+    // Navigation - Main
     dashboard: 'لوحة التحكم',
-    clients: 'العملاء',
     cases: 'القضايا',
+    services: 'الخدمات',
+    system: 'النظام',
+    
+    // Services - Work Follow Up
+    workFollowUp: 'متابعة العمل',
     sessions: 'الجلسات',
-    announcements: 'الإعلانات',
-    lawyers: 'المحامون',
+    procedures: 'الإجراءات',
+    
+    // Services - Customer Service
+    customerService: 'خدمة العملاء',
+    clients: 'العملاء',
+    clientsNoAgency: 'عملاء بدون وكالة',
+    archive: 'الأرشيف',
+    courtSearch: 'بحث المحاكم',
+    
+    // Services - Site Management
+    siteManagement: 'إدارة الموقع',
+    sitePages: 'صفحات الموقع',
+    team: 'فريق العمل',
+    achievements: 'الإنجازات',
+    siteSettings: 'إعدادات الموقع',
+    
+    // System
     settings: 'الإعدادات',
+    officeSettings: 'إعدادات المكتب',
+    courtSettings: 'إعدادات المحاكم',
+    lawyers: 'المحامون',
+    usersPermissions: 'المستخدمون والصلاحيات',
+    announcements: 'الإعلانات',
     
     // Landing Page
     heroTitle: 'نظام إدارة مكاتب المحاماة الأكثر تطوراً',
@@ -56,6 +80,12 @@ const translations = {
     caseTypeDistribution: 'توزيع القضايا حسب النوع',
     monthlyPerformance: 'الأداء الشهري',
     closureRate: 'معدل إغلاق القضايا',
+    scheduled: 'مجدولة',
+    completed: 'مكتملة',
+    won: 'ربح',
+    lost: 'خسارة',
+    settled: 'تسوية',
+    rate: 'المعدل',
     
     // Cases
     caseNumber: 'رقم القضية',
@@ -68,6 +98,13 @@ const translations = {
     nextSession: 'الجلسة القادمة',
     lawyer: 'المحامي',
     actions: 'الإجراءات',
+    
+    // Case Types
+    criminal: 'جنائي',
+    commercial: 'تجاري',
+    family: 'أسري',
+    civil: 'مدني',
+    labor: 'عمالي',
     
     // Status
     new: 'جديدة',
@@ -85,22 +122,62 @@ const translations = {
     save: 'حفظ',
     cancel: 'إلغاء',
     close: 'إغلاق',
+    viewDetails: 'عرض التفاصيل',
+    total: 'الإجمالي',
     
     // Footer
     aboutSystem: 'عن النظام',
     contact: 'التواصل',
     terms: 'الشروط والأحكام',
     privacy: 'سياسة الخصوصية',
+    
+    // Months
+    jan: 'يناير',
+    feb: 'فبراير',
+    mar: 'مارس',
+    apr: 'أبريل',
+    may: 'مايو',
+    jun: 'يونيو',
+    jul: 'يوليو',
+    aug: 'أغسطس',
+    sep: 'سبتمبر',
+    oct: 'أكتوبر',
+    nov: 'نوفمبر',
+    dec: 'ديسمبر',
   },
   en: {
-    // Navigation
+    // Navigation - Main
     dashboard: 'Dashboard',
-    clients: 'Clients',
     cases: 'Cases',
+    services: 'Services',
+    system: 'System',
+    
+    // Services - Work Follow Up
+    workFollowUp: 'Work Follow-up',
     sessions: 'Sessions',
-    announcements: 'Announcements',
-    lawyers: 'Lawyers',
+    procedures: 'Procedures',
+    
+    // Services - Customer Service
+    customerService: 'Customer Service',
+    clients: 'Clients',
+    clientsNoAgency: 'Clients No Agency',
+    archive: 'Archive',
+    courtSearch: 'Court Search',
+    
+    // Services - Site Management
+    siteManagement: 'Site Management',
+    sitePages: 'Site Pages',
+    team: 'Team',
+    achievements: 'Achievements',
+    siteSettings: 'Site Settings',
+    
+    // System
     settings: 'Settings',
+    officeSettings: 'Office Settings',
+    courtSettings: 'Court Settings',
+    lawyers: 'Lawyers',
+    usersPermissions: 'Users & Permissions',
+    announcements: 'Announcements',
     
     // Landing Page
     heroTitle: 'The Most Advanced Law Firm Management System',
@@ -136,6 +213,12 @@ const translations = {
     caseTypeDistribution: 'Case Type Distribution',
     monthlyPerformance: 'Monthly Performance',
     closureRate: 'Case Closure Rate',
+    scheduled: 'Scheduled',
+    completed: 'Completed',
+    won: 'Won',
+    lost: 'Lost',
+    settled: 'Settled',
+    rate: 'Rate',
     
     // Cases
     caseNumber: 'Case Number',
@@ -148,6 +231,13 @@ const translations = {
     nextSession: 'Next Session',
     lawyer: 'Lawyer',
     actions: 'Actions',
+    
+    // Case Types
+    criminal: 'Criminal',
+    commercial: 'Commercial',
+    family: 'Family',
+    civil: 'Civil',
+    labor: 'Labor',
     
     // Status
     new: 'New',
@@ -165,12 +255,28 @@ const translations = {
     save: 'Save',
     cancel: 'Cancel',
     close: 'Close',
+    viewDetails: 'View Details',
+    total: 'Total',
     
     // Footer
     aboutSystem: 'About System',
     contact: 'Contact',
     terms: 'Terms & Conditions',
     privacy: 'Privacy Policy',
+    
+    // Months
+    jan: 'Jan',
+    feb: 'Feb',
+    mar: 'Mar',
+    apr: 'Apr',
+    may: 'May',
+    jun: 'Jun',
+    jul: 'Jul',
+    aug: 'Aug',
+    sep: 'Sep',
+    oct: 'Oct',
+    nov: 'Nov',
+    dec: 'Dec',
   },
 };
 
