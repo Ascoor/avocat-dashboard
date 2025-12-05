@@ -1,8 +1,15 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
-export default {
+const config: Config = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,18 +21,14 @@ export default {
     },
     extend: {
       colors: {
-        /* ═══════════════════════════════════════════════════════════════ */
         /* BASE SEMANTIC TOKENS */
-        /* ═══════════════════════════════════════════════════════════════ */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* SURFACE & NEUTRAL COLORS */
-        /* ─────────────────────────────────────────────────────────────── */
         surface: {
           DEFAULT: "hsl(var(--surface))",
           raised: "hsl(var(--surface-raised))",
@@ -37,19 +40,15 @@ export default {
           700: "hsl(var(--neutral-700))",
           900: "hsl(var(--neutral-900))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* BRAND COLORS */
-        /* ─────────────────────────────────────────────────────────────── */
         brand: {
           primary: "hsl(var(--brand-primary))",
           on: "hsl(var(--brand-on))",
           subtle: "hsl(var(--brand-subtle))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* PRIMARY & GOLD */
-        /* ─────────────────────────────────────────────────────────────── */
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -70,20 +69,16 @@ export default {
           800: "hsl(32, 80%, 35%)",
           900: "hsl(30, 75%, 30%)",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* ACCENT COLORS */
-        /* ─────────────────────────────────────────────────────────────── */
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           mint: "hsl(var(--accent-mint))",
           amber: "hsl(var(--accent-amber))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* EXCLUSIVE & NEON */
-        /* ─────────────────────────────────────────────────────────────── */
         exclusive: {
           DEFAULT: "hsl(var(--exclusive))",
           muted: "hsl(var(--exclusive-muted))",
@@ -95,19 +90,15 @@ export default {
           glow: "hsl(var(--neon-glow))",
           muted: "hsl(var(--neon-muted))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* SLATE */
-        /* ─────────────────────────────────────────────────────────────── */
         slate: {
           DEFAULT: "hsl(var(--slate))",
           light: "hsl(var(--slate-light))",
           bg: "hsl(var(--slate-bg))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* LEGAL SEMANTIC COLORS */
-        /* ─────────────────────────────────────────────────────────────── */
         legal: {
           primary: {
             700: "hsl(var(--legal-primary-700))",
@@ -125,10 +116,8 @@ export default {
           warning: "hsl(var(--legal-warning-500))",
           danger: "hsl(var(--legal-danger-500))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* SECONDARY, MUTED, DESTRUCTIVE */
-        /* ─────────────────────────────────────────────────────────────── */
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -141,10 +130,8 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* CARD & POPOVER */
-        /* ─────────────────────────────────────────────────────────────── */
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -154,10 +141,8 @@ export default {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* SIDEBAR */
-        /* ─────────────────────────────────────────────────────────────── */
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -175,10 +160,8 @@ export default {
           "subitem-hover": "hsl(var(--sidebar-subitem-hover-bg))",
           "subitem-active": "hsl(var(--sidebar-subitem-active-bg))",
         },
-        
-        /* ─────────────────────────────────────────────────────────────── */
+
         /* NAVY (Static scale) */
-        /* ─────────────────────────────────────────────────────────────── */
         navy: {
           50: "hsl(222, 47%, 95%)",
           100: "hsl(222, 47%, 85%)",
@@ -243,20 +226,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -265,5 +240,7 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [tailwindcssAnimate],
+};
+
+export default config;

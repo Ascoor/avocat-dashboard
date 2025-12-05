@@ -1,0 +1,1010 @@
+{
+  "brand": {
+    "name": "أفوكات"
+  },
+  "sidebar": {
+    "sections": {
+      "main": "الرئيسية",
+      "system": "النظام",
+      "website": "إدارة الموقع"
+    },
+    "toggle": {
+      "open": "توسيع القسم",
+      "close": "طي القسم"
+    }
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "cases": "القضايا",
+    "customer_service": "خدمة العملاء",
+    "clients": "العملاء",
+    "agents": "وكلاء العملاء",
+    "unClients": "عملاء بدون وكالة",
+    "lawyers": "المحامون",
+    "documents": "الوثائق",
+    "sessions": "الجلسات",
+    "procedures": "الإجراءات",
+    "services": "الخدمات",
+    "work_tracking": "متابعة العمل",
+    "reports": "التقارير",
+    "settings": "الإعدادات",
+    "office_settings": "إعدادات المكتب",
+    "courts_settings": "إعدادات المحاكم",
+    "users_roles": "المستخدمون والصلاحيات",
+    "archive": "الأرشيف",
+    "courts_search": "بحث المحاكم",
+    "website_pages": "صفحات الموقع",
+    "website_team": "فريق العمل",
+    "website_achievements": "الإنجازات",
+    "website_settings": "إعدادات الموقع",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب"
+  },
+  "home": {
+    "title": "مرحبًا بك في أفوكات",
+    "subtitle": "ابدأ في بناء منصة إدارة مكتبك القانوني المتطورة."
+  },
+  "common": {
+    "theme": "المظهر",
+    "language": "اللغة",
+    "logout": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "dark": "ليلي",
+    "light": "نهاري",
+    "notifications": "الإشعارات",
+    "menu": "القائمة",
+    "close": "إغلاق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "export": "تصدير",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "loading": "جارٍ التحميل...",
+    "success": "نجاح",
+    "error": "خطأ",
+    "info": "تنبيه",
+    "toggleLanguage": "تغيير اللغة",
+    "welcome": "مرحبًا بك مجددًا",
+    "comingSoon": "قريبًا",
+    "comingSoonDescription": "نعمل على إتاحة هذه التجربة لك قريبًا.",
+    "backToDashboard": "العودة للوحة التحكم",
+    "backToLanding": "العودة للصفحة التعريفية",
+    "expand": "توسيع",
+    "collapse": "طي"
+  },
+  "table": {
+    "showing": "عرض",
+    "of": "من",
+    "entries": "سجلات",
+    "search": "بحث...",
+    "export": "تصدير",
+    "exportExcel": "تصدير إلى Excel",
+    "exportCSV": "تصدير إلى CSV",
+    "noResults": "لا توجد نتائج",
+    "noData": "لا توجد بيانات",
+    "page": "الصفحة",
+    "previous": "السابق",
+    "next": "التالي",
+    "sortBy": "ترتيب حسب",
+    "noSort": "بدون ترتيب",
+    "sortDirection": {
+      "asc": "تصاعدي",
+      "desc": "تنازلي"
+    },
+    "clearSort": "إعادة الترتيب",
+    "aria": {
+      "sortColumn": "تغيير عمود الترتيب",
+      "toggleDirection": "تبديل اتجاه الترتيب",
+      "clearSort": "مسح الترتيب",
+      "exportCsv": "تصدير الجدول كملف CSV",
+      "exportExcel": "تصدير الجدول كملف Excel"
+    }
+  },
+  "status": {
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "pending": "قيد الانتظار",
+    "completed": "مكتمل",
+    "cancelled": "ملغى",
+    "scheduled": "مجدول",
+    "in_progress": "قيد التنفيذ",
+    "closed": "مغلق",
+    "suspended": "معلق",
+    "postponed": "مؤجل"
+  },
+  "priority": {
+    "low": "منخفضة",
+    "medium": "متوسطة",
+    "high": "مرتفعة",
+    "urgent": "عاجلة"
+  },
+  "cases": {
+    "title": "إدارة القضايا",
+    "caseTitle": "عنوان القضية",
+    "client": "الموكل",
+    "lawyer": "المحامي",
+    "status": "الحالة",
+    "priority": "الأولوية",
+    "createdDate": "تاريخ الإنشاء",
+    "nextHearing": "الجلسة القادمة",
+    "value": "قيمة القضية",
+    "addCase": "إضافة قضية جديدة"
+  },
+  "clients": {
+    "title": "العملاء",
+    "subtitle": "حافظ على نظرة شاملة لعملائك المفوضين وتفويضاتهم.",
+    "addNew": "إضافة عميل جديد",
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "joinDate": "تاريخ الانضمام",
+    "list": {
+      "title": "قائمة العملاء",
+      "subtitle": "إدارة بيانات العملاء الحاليين ومعلومات التواصل وحالاتهم.",
+      "add": "إضافة عميل",
+      "empty": "لا يوجد عملاء مضافون بعد.",
+      "table": {
+        "slug": "المرجع",
+        "name": "الاسم",
+        "identity": "رقم الهوية",
+        "phone": "رقم الهاتف",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      },
+      "confirmDeleteTitle": "حذف {name}؟",
+      "confirmDeleteDescription": "سيتم حذف سجل هذا العميل بشكل نهائي.",
+      "confirmDelete": "حذف"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "messages": {
+      "toggleErrorTitle": "تعذر تغيير الحالة",
+      "toggleErrorDescription": "يرجى المحاولة بعد قليل.",
+      "deleteSuccess": "تم حذف العميل بنجاح.",
+      "deleteErrorTitle": "تعذر حذف العميل",
+      "deleteErrorDescription": "يرجى المحاولة مرة أخرى لاحقًا."
+    }
+  },
+  "agents": {
+    "title": "إدارة الوكلاء",
+    "name": "اسم الوكيل",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "department": "القسم",
+    "clientsCount": "عدد العملاء",
+    "status": "الحالة",
+    "joinDate": "تاريخ الانضمام",
+    "addAgent": "إضافة وكيل جديد"
+  },
+  "sessions": {
+    "title": "إدارة الجلسات",
+    "caseTitle": "القضية",
+    "date": "التاريخ",
+    "type": "النوع",
+    "status": "الحالة",
+    "lawyer": "المحامي",
+    "court": "المحكمة",
+    "duration": "المدة",
+    "addSession": "إضافة جلسة جديدة",
+    "hearing": "جلسة",
+    "consultation": "استشارة",
+    "mediation": "وساطة",
+    "minutes": "دقائق"
+  },
+  "procedures": {
+    "title": "الإجراءات القانونية",
+    "caseTitle": "القضية",
+    "type": "نوع الإجراء",
+    "status": "الحالة",
+    "assignedTo": "مكلف بـ",
+    "dueDate": "تاريخ الاستحقاق",
+    "priority": "الأولوية",
+    "addProcedure": "إضافة إجراء جديد"
+  },
+  "auth": {
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج",
+    "session_expired": "انتهت جلستك، يرجى تسجيل الدخول مجددًا.",
+    "errors": {
+      "invalid_credentials": "بيانات تسجيل الدخول غير صحيحة."
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب.",
+      "email_invalid": "يرجى إدخال بريد إلكتروني صالح.",
+      "password_length": "يجب ألا تقل كلمة المرور عن 6 أحرف.",
+      "password_mismatch": "كلمتا المرور غير متطابقتين."
+    },
+    "login": {
+      "title": "مرحبًا بعودتك",
+      "subtitle": "سجّل الدخول لإدارة القضايا والعملاء والجلسات.",
+      "email": "البريد الإلكتروني",
+      "email_placeholder": "أدخل بريدك الإلكتروني",
+      "password": "كلمة المرور",
+      "password_placeholder": "أدخل كلمة المرور",
+      "show_password": "إظهار كلمة المرور",
+      "hide_password": "إخفاء كلمة المرور",
+      "remember": "تذكرني",
+      "forgot": "هل نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "success": "تم تسجيل الدخول بنجاح.",
+      "error": "تعذر تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "after_register": "تم إنشاء الحساب بنجاح. يرجى تسجيل الدخول.",
+      "register_prompt": "ليس لديك حساب؟",
+      "register_cta": "أنشئ واحدًا",
+      "swap_layout": "تبديل الجوانب",
+      "swap_layout_aria": "تبديل موضع الخلفية ونموذج الدخول",
+      "signup_highlight_title": "جديد على أفوكات؟",
+      "signup_highlight_description": "أنشئ مساحة عملك الآمنة وتمتع بأدوات التشغيل القانونية المتقدمة."
+    },
+    "signup": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "انضم إلى أفوكات واستمتع بتجربة المكتب القانوني الرقمية الكاملة.",
+      "name": "الاسم الكامل",
+      "name_placeholder": "أدخل اسمك الكامل",
+      "email": "البريد الإلكتروني",
+      "email_placeholder": "أدخل بريدك الإلكتروني",
+      "password": "كلمة المرور",
+      "password_placeholder": "أنشئ كلمة مرور قوية",
+      "confirm_password": "تأكيد كلمة المرور",
+      "confirm_password_placeholder": "أعد إدخال كلمة المرور",
+      "submit": "إنشاء الحساب",
+      "success_title": "مرحبًا بك في أفوكات",
+      "success_message": "تم إنشاء حسابك بنجاح.",
+      "error_title": "حدث خطأ",
+      "error_message": "تعذر إتمام عملية التسجيل. حاول مرة أخرى.",
+      "have_account": "لديك حساب بالفعل؟",
+      "back_to_home": "العودة إلى الصفحة الرئيسية",
+      "security_title": "حماية بمستوى المؤسسات",
+      "security_description": "بيانات اعتمادك وسجلات عملائك مشفرة من الطرف إلى الطرف."
+    },
+    "register": {
+      "title": "إنشاء حساب"
+    }
+  },
+  "lawyers": {
+    "list": {
+      "title": "المحامون",
+      "subtitle": "أدر ملفات المحامين وبيانات اعتمادهم ومتابعة أنشطتهم.",
+      "add": "إضافة محامٍ",
+      "table": {
+        "name": "الاسم",
+        "identity": "رقم الهوية",
+        "license": "رقم القيد",
+        "class": "درجة القيد",
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "actions": "إجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      },
+      "empty": "لا يوجد محامون مضافون بعد.",
+      "confirmDeleteTitle": "حذف {name}؟",
+      "confirmDeleteDescription": "سيتم حذف ملف المحامي بشكل نهائي.",
+      "confirmDelete": "حذف"
+    },
+    "detail": {
+      "title": "ملف المحامي",
+      "about": "البيانات الشخصية",
+      "contact": "بيانات التواصل",
+      "meta": "بيانات القيد",
+      "sessions": "أحدث الجلسات",
+      "procedures": "أحدث الإجراءات"
+    },
+    "form": {
+      "titleCreate": "إضافة محامٍ",
+      "titleEdit": "تعديل بيانات المحامي",
+      "labels": {
+        "name": "الاسم الكامل",
+        "birthdate": "تاريخ الميلاد",
+        "identity_number": "رقم الهوية",
+        "law_reg_num": "رقم القيد",
+        "lawyer_class": "درجة القيد",
+        "email": "البريد الإلكتروني",
+        "phone_number": "رقم الهاتف",
+        "gender": "الجنس",
+        "address": "العنوان",
+        "religion": "الديانة"
+      },
+      "placeholders": {
+        "name": "أدخل الاسم الكامل",
+        "identity_number": "أدخل رقم الهوية",
+        "law_reg_num": "أدخل رقم القيد",
+        "email": "أدخل البريد الإلكتروني",
+        "phone_number": "أدخل رقم الهاتف",
+        "address": "أدخل العنوان"
+      },
+      "gender": {
+        "male": "ذكر",
+        "female": "أنثى"
+      },
+      "religion": {
+        "muslim": "مسلم",
+        "christian": "مسيحي"
+      },
+      "class": {
+        "naqdh": "نقض",
+        "isteenaf": "استئناف",
+        "ibtedai": "ابتدائي",
+        "general": "جدول عام"
+      },
+      "actions": {
+        "save": "حفظ",
+        "cancel": "إلغاء"
+      },
+      "messages": {
+        "createSuccess": "تمت إضافة المحامي بنجاح.",
+        "updateSuccess": "تم تحديث بيانات المحامي بنجاح.",
+        "deleteSuccess": "تم حذف المحامي بنجاح.",
+        "error": "تعذر إتمام الطلب، حاول مرة أخرى."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "welcome_title": "مرحبًا، سعيدون بعودتك",
+    "welcome_subtitle": "إليك لمحة سريعة عن أداء مكتبك اليوم.",
+    "quick_actions": "إجراءات سريعة",
+    "total_cases": "إجمالي القضايا",
+    "active_clients": "العملاء النشطون",
+    "upcoming_sessions": "الجلسات القادمة",
+    "total_revenue": "إجمالي الإيرادات",
+    "cases_by_status": "القضايا حسب الحالة",
+    "recent_cases": "أحدث القضايا",
+    "view_all": "عرض الكل",
+    "new_case": "قضية جديدة",
+    "add_client": "إضافة عميل",
+    "schedule_session": "جدولة جلسة",
+    "manage_services": "إدارة الخدمات",
+    "active": "نشطة",
+    "pending": "قيد الانتظار",
+    "closed": "مغلقة",
+    "on_hold": "معلقة",
+    "errors": {
+      "stats": "تعذر تحميل الإحصائيات",
+      "chart": "تعذر تحميل توزيع القضايا",
+      "recent": "تعذر تحميل القضايا الحديثة"
+    },
+    "sections": {
+      "customer_service": "خدمة العملاء",
+      "agents": "وكلاء العملاء",
+      "clients_no_agents": "عملاء بدون وكلاء",
+      "reports": "التقارير",
+      "sessions": "الجلسات",
+      "procedures": "الإجراءات القانونية",
+      "services": "الخدمات",
+      "settings": "الإعدادات",
+      "office_settings": "إعدادات المكتب",
+      "users_roles": "المستخدمون والصلاحيات",
+      "archive": "الأرشيف",
+      "courts_search": "البحث في المحاكم"
+    },
+    "coming_soon": "هذا القسم سيكون متاحًا قريبًا.",
+    "kpis": {
+      "openCases": "القضايا المفتوحة",
+      "activeClients": "العملاء النشطون",
+      "hearings": "الجلسات هذا الأسبوع",
+      "revenue": "الإيرادات الشهرية"
+    },
+    "recentActivity": "النشاط الأخير",
+    "casesByStatus": "القضايا حسب الحالة",
+    "home": {
+      "welcome": {
+        "title": "مرحبًا، سعيدون بعودتك",
+        "subtitle": "نظرة عامة على أحدث الأنشطة والإحصائيات"
+      },
+      "stats": [
+        {
+          "title": "إجمالي القضايا",
+          "value": "124",
+          "change": "+12%",
+          "icon": "cases",
+          "color": "text-primary"
+        },
+        {
+          "title": "العملاء النشطون",
+          "value": "89",
+          "change": "+8%",
+          "icon": "clients",
+          "color": "text-accent"
+        },
+        {
+          "title": "الجلسات القادمة",
+          "value": "23",
+          "change": "+5%",
+          "icon": "sessions",
+          "color": "text-success"
+        },
+        {
+          "title": "معدل النجاح",
+          "value": "94%",
+          "change": "+3%",
+          "icon": "performance",
+          "color": "text-warning"
+        }
+      ],
+      "activities": {
+        "title": "الأنشطة الحديثة",
+        "subtitle": "آخر التحديثات والحركات داخل النظام",
+        "items": [
+          {
+            "title": "قضية جديدة: نزاع تجاري",
+            "time": "منذ ساعة",
+            "type": "case"
+          },
+          {
+            "title": "جلسة محكمة مجدولة",
+            "time": "منذ 3 ساعات",
+            "type": "session"
+          },
+          {
+            "title": "تسجيل عميل جديد",
+            "time": "منذ يوم",
+            "type": "client"
+          },
+          {
+            "title": "التقرير الشهري جاهز",
+            "time": "منذ يومين",
+            "type": "report"
+          }
+        ]
+      },
+      "tasks": {
+        "title": "المهام العاجلة",
+        "subtitle": "المهام التي تحتاج إلى متابعة فورية",
+        "items": [
+          {
+            "title": "مراجعة عقد الشراكة",
+            "deadline": "اليوم",
+            "priority": "high"
+          },
+          {
+            "title": "تحضير مذكرة الدفاع",
+            "deadline": "غدًا",
+            "priority": "high"
+          },
+          {
+            "title": "متابعة قضية العقارات",
+            "deadline": "الأسبوع القادم",
+            "priority": "medium"
+          }
+        ],
+        "priorities": {
+          "high": "عاجل",
+          "medium": "متوسط"
+        }
+      }
+    }
+  },
+  "legalCases": {
+    "title": "القضايا",
+    "subtitle": "إدارة بيانات القضايا والمتابعة مع الموكلين من مكان واحد.",
+    "addCase": "إضافة قضية جديدة",
+    "fetchError": "تعذر تحميل القضايا حاليًا، يرجى المحاولة لاحقًا.",
+    "noClient": "لا يوجد موكل",
+    "moreClients": "و{{count}} آخرين",
+    "deleteSuccess": "تم حذف القضية بنجاح.",
+    "deleteErrorTitle": "تعذر حذف القضية.",
+    "deleteErrorDescription": "يرجى المحاولة مرة أخرى أو التواصل مع الدعم عند استمرار المشكلة.",
+    "confirmDelete": "هل أنت متأكد من حذف \"{{title}}\"؟",
+    "columns": {
+      "fileNumber": "رقم الملف",
+      "clients": "الموكلون",
+      "clientCapacity": "صفة الإدعاء",
+      "subject": "موضوع الدعوى",
+      "caseType": "نوع القضية",
+      "status": "حالة القضية"
+    }
+  },
+  "legalCaseDetails": {
+    "title": "تفاصيل القضية",
+    "subtitle": "استعرض وأدر جميع بيانات وأنشطة هذه القضية.",
+    "back": "رجوع",
+    "fetchError": "تعذر تحميل تفاصيل القضية في الوقت الحالي.",
+    "sections": {
+      "basicInfo": "البيانات الأساسية",
+      "opponentInfo": "بيانات الخصم"
+    },
+    "tabs": {
+      "procedures": "الإجراءات",
+      "sessions": "الجلسات",
+      "ads": "الإعلانات"
+    },
+    "fields": {
+      "slug": "رقم الملف",
+      "title": "عنوان القضية",
+      "status": "الحالة",
+      "caseType": "نوع القضية",
+      "caseSubType": "النوع الفرعي",
+      "clientCapacity": "صفة الموكل",
+      "litigantName": "الخصم",
+      "litigantPhone": "هاتف الخصم",
+      "lawyerName": "محامي الخصم",
+      "lawyerPhone": "هاتف محامي الخصم",
+      "description": "الوصف"
+    },
+    "clients": {
+      "title": "الموكلون",
+      "subtitle": "أضف أو احذف الموكلين المرتبطين بهذه القضية.",
+      "addClient": "إضافة موكل",
+      "loadErrorTitle": "تعذر تحميل الموكلين",
+      "loadErrorDescription": "لم نتمكن من جلب قائمة الموكلين، حاول مرة أخرى.",
+      "duplicateClientTitle": "الموكل مضاف مسبقًا",
+      "duplicateClientDescription": "هذا الموكل مرتبط بالفعل بالقضية.",
+      "noSelectionTitle": "لم يتم اختيار موكل",
+      "noSelectionDescription": "يرجى اختيار موكل واحد على الأقل قبل الحفظ.",
+      "addSuccess": "تمت إضافة الموكلين بنجاح.",
+      "addErrorTitle": "تعذر إضافة الموكلين",
+      "addErrorDescription": "يرجى مراجعة الموكلين المحددين ثم المحاولة مجددًا.",
+      "removeSuccess": "تم حذف الموكل بنجاح.",
+      "removeErrorTitle": "تعذر حذف الموكل",
+      "removeErrorDescription": "يرجى المحاولة لاحقًا.",
+      "searchPlaceholder": "ابحث عن موكل...",
+      "removeRow": "إزالة",
+      "saveClients": "حفظ الموكلين",
+      "columns": {
+        "slug": "رقم المكتب",
+        "name": "الاسم",
+        "phone": "الهاتف",
+        "actions": "إجراءات"
+      },
+      "empty": "لا يوجد موكلون مرتبطون بالقضية بعد.",
+      "noPhone": "غير متوفر",
+      "deleteClient": "حذف",
+      "deleteConfirmTitle": "هل تريد حذف {{name}} من القضية؟",
+      "deleteConfirmDescription": "لا يمكن التراجع عن هذه العملية.",
+      "confirmDelete": "حذف"
+    },
+    "courts": {
+      "title": "المحاكم",
+      "subtitle": "تتبع المحاكم والملفات المرتبطة بالقضية.",
+      "addCourt": "إضافة محكمة",
+      "loadErrorTitle": "تعذر تحميل المحاكم",
+      "loadErrorDescription": "لم نتمكن من تحميل قائمة المحاكم، حاول لاحقًا.",
+      "noCourtsTitle": "لا توجد محاكم",
+      "noCourtsDescription": "أضف محكمة واحدة على الأقل قبل الحفظ.",
+      "missingFieldsTitle": "بيانات ناقصة",
+      "missingFieldsDescription": "يرجى استكمال جميع حقول المحكمة قبل الحفظ.",
+      "addSuccess": "تمت إضافة المحاكم بنجاح.",
+      "addErrorTitle": "تعذر إضافة المحاكم",
+      "addErrorDescription": "حدث خطأ أثناء حفظ المحاكم.",
+      "removeSuccess": "تم حذف المحكمة بنجاح.",
+      "removeErrorTitle": "تعذر حذف المحكمة",
+      "removeErrorDescription": "يرجى المحاولة لاحقًا.",
+      "caseNumberPlaceholder": "رقم الدعوى",
+      "selectYear": "اختر السنة",
+      "selectLevel": "اختر الدرجة",
+      "selectCourt": "اختر المحكمة",
+      "removeRow": "إزالة",
+      "saveCourts": "حفظ المحاكم",
+      "columns": {
+        "court": "المحكمة",
+        "level": "الدرجة",
+        "caseNumber": "رقم الدعوى",
+        "caseYear": "سنة الدعوى",
+        "actions": "إجراءات"
+      },
+      "empty": "لا توجد محاكم مرتبطة بالقضية بعد.",
+      "deleteCourt": "حذف",
+      "deleteConfirmTitle": "هل تريد حذف {{name}} من القضية؟",
+      "deleteConfirmDescription": "لا يمكن التراجع عن هذه العملية.",
+      "confirmDelete": "حذف"
+    },
+    "procedures": {
+      "title": "إجراءات القضية",
+      "subtitle": "تابع الإجراءات المنفذة على هذه القضية.",
+      "addButton": "إضافة إجراء",
+      "loadErrorTitle": "تعذر تحميل الإجراءات",
+      "loadErrorDescription": "لم نتمكن من جلب الإجراءات، حاول مرة أخرى.",
+      "empty": "لا توجد إجراءات مسجلة لهذه القضية بعد.",
+      "columns": {
+        "type": "الإجراء",
+        "lawyer": "المحامي",
+        "endDate": "تاريخ الانتهاء",
+        "job": "المطلوب",
+        "result": "النتيجة",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "editButton": "تعديل",
+      "deleteButton": "حذف",
+      "deleteSuccess": "تم حذف الإجراء بنجاح.",
+      "deleteErrorTitle": "تعذر حذف الإجراء",
+      "deleteErrorDescription": "يرجى المحاولة لاحقًا.",
+      "deleteConfirmTitle": "هل تريد حذف هذا الإجراء؟",
+      "deleteConfirmDescription": "لا يمكن التراجع عن هذه العملية.",
+      "metaErrorTitle": "تعذر تحميل بيانات الإجراء",
+      "metaErrorDescription": "لم نتمكن من تحميل بيانات النموذج، حاول مرة أخرى.",
+      "updateSuccess": "تم تحديث الإجراء بنجاح.",
+      "createSuccess": "تم إضافة الإجراء بنجاح.",
+      "saveErrorTitle": "تعذر حفظ الإجراء",
+      "saveErrorDescription": "يرجى مراجعة البيانات والمحاولة مجددًا.",
+      "editTitle": "تعديل الإجراء",
+      "addTitle": "إضافة إجراء",
+      "fields": {
+        "type": "نوع الإجراء",
+        "placeType": "نوع الجهة",
+        "placeName": "اسم الجهة",
+        "lawyer": "المحامي",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "job": "المطلوب",
+        "result": "النتيجة",
+        "status": "حالة الإجراء",
+        "cost": "رسوم بإيصالات",
+        "fee": "أتعاب الإجراء",
+        "otherCost": "مصروفات أخرى"
+      },
+      "status": {
+        "inProgress": "جارٍ التنفيذ",
+        "completed": "تم",
+        "notExecuted": "لم ينفذ"
+      },
+      "selectType": "اختر نوع الإجراء",
+      "selectPlaceType": "اختر نوع الجهة",
+      "selectLawyer": "اختر المحامي",
+      "updateButton": "تحديث",
+      "createButton": "حفظ"
+    },
+    "sessions": {
+      "title": "جلسات القضية",
+      "subtitle": "تابع الجلسات ونتائجها لهذه القضية.",
+      "addButton": "إضافة جلسة",
+      "loadErrorTitle": "تعذر تحميل الجلسات",
+      "loadErrorDescription": "لم نتمكن من جلب الجلسات، حاول مرة أخرى.",
+      "empty": "لا توجد جلسات مسجلة لهذه القضية بعد.",
+      "columns": {
+        "date": "تاريخ الجلسة",
+        "lawyer": "المحامي",
+        "roll": "الرول",
+        "court": "المحكمة",
+        "orders": "الطلبات",
+        "result": "النتيجة",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "editButton": "تعديل",
+      "deleteButton": "حذف",
+      "deleteSuccess": "تم حذف الجلسة بنجاح.",
+      "deleteErrorTitle": "تعذر حذف الجلسة",
+      "deleteErrorDescription": "يرجى المحاولة لاحقًا.",
+      "deleteConfirmTitle": "هل تريد حذف هذه الجلسة؟",
+      "deleteConfirmDescription": "لا يمكن التراجع عن هذه العملية.",
+      "metaErrorTitle": "تعذر تحميل بيانات الجلسة",
+      "metaErrorDescription": "لم نتمكن من تحميل بيانات النموذج، حاول مجددًا.",
+      "updateSuccess": "تم تحديث الجلسة بنجاح.",
+      "createSuccess": "تمت إضافة الجلسة بنجاح.",
+      "saveErrorTitle": "تعذر حفظ الجلسة",
+      "saveErrorDescription": "يرجى مراجعة البيانات والمحاولة مجددًا.",
+      "editTitle": "تعديل الجلسة",
+      "addTitle": "إضافة جلسة",
+      "fields": {
+        "court": "المحكمة",
+        "type": "نوع الجلسة",
+        "lawyer": "المحامي",
+        "sessionDate": "تاريخ الجلسة",
+        "sessionRoll": "رول القضية",
+        "courtDepartment": "دائرة المحكمة",
+        "orders": "الطلبات",
+        "result": "النتيجة",
+        "notes": "ملاحظات",
+        "status": "الحالة",
+        "cost1": "رسوم بإيصالات",
+        "cost2": "أتعاب الجلسة",
+        "cost3": "مصروفات أخرى",
+        "judgment": "المنطوق"
+      },
+      "status": {
+        "inProgress": "جارٍ التنفيذ",
+        "completed": "تم",
+        "cancelled": "ملغاة"
+      },
+      "selectCourt": "اختر المحكمة",
+      "selectType": "اختر نوع الجلسة",
+      "selectLawyer": "اختر المحامي",
+      "updateButton": "تحديث",
+      "createButton": "حفظ"
+    },
+    "ads": {
+      "title": "الإعلانات القانونية",
+      "subtitle": "إدارة الإعلانات القانونية المرتبطة بهذه القضية.",
+      "addButton": "إضافة إعلان",
+      "loadErrorTitle": "تعذر تحميل الإعلانات",
+      "loadErrorDescription": "لم نتمكن من جلب الإعلانات القانونية، حاول لاحقًا.",
+      "empty": "لا توجد إعلانات قانونية مسجلة لهذه القضية بعد.",
+      "columns": {
+        "type": "نوع الإعلان",
+        "number": "رقم الإعلان",
+        "date": "التاريخ",
+        "status": "الحالة",
+        "details": "التفاصيل",
+        "actions": "إجراءات"
+      },
+      "editButton": "تعديل",
+      "deleteButton": "حذف",
+      "deleteSuccess": "تم حذف الإعلان بنجاح.",
+      "deleteErrorTitle": "تعذر حذف الإعلان",
+      "deleteErrorDescription": "يرجى المحاولة لاحقًا.",
+      "deleteConfirmTitle": "هل تريد حذف هذا الإعلان؟",
+      "deleteConfirmDescription": "لا يمكن التراجع عن هذه العملية.",
+      "metaErrorTitle": "تعذر تحميل بيانات الإعلان",
+      "metaErrorDescription": "لم نتمكن من تحميل بيانات النموذج، حاول مرة أخرى.",
+      "updateSuccess": "تم تحديث الإعلان بنجاح.",
+      "createSuccess": "تمت إضافة الإعلان بنجاح.",
+      "saveErrorTitle": "تعذر حفظ الإعلان",
+      "saveErrorDescription": "يرجى مراجعة البيانات والمحاولة مجددًا.",
+      "editTitle": "تعديل الإعلان",
+      "addTitle": "إضافة إعلان",
+      "fields": {
+        "type": "نوع الإعلان",
+        "number": "رقم الإعلان",
+        "date": "التاريخ",
+        "details": "التفاصيل",
+        "status": "الحالة"
+      },
+      "status": {
+        "active": "ساري",
+        "completed": "منتهٍ",
+        "cancelled": "ملغى"
+      },
+      "selectType": "اختر نوع الإعلان",
+      "updateButton": "تحديث",
+      "createButton": "حفظ"
+    }
+  },
+  "unClients": {
+    "title": "عملاء بدون وكالة",
+    "subtitle": "تابع الأفراد الذين لم يتم تمثيلهم بعد من قبل مكتبك."
+  },
+  "unclients": {
+    "list": {
+      "title": "العملاء المحتملون",
+      "subtitle": "أدر الأشخاص الذين لم يتم تسجيلهم بعد كعملاء لدى المكتب.",
+      "add": "إضافة عميل محتمل",
+      "empty": "لا يوجد عملاء محتملون حتى الآن.",
+      "table": {
+        "slug": "المرجع",
+        "name": "الاسم",
+        "identity": "رقم الهوية",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "actions": "إجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      },
+      "confirmDeleteTitle": "حذف {name}؟",
+      "confirmDeleteDescription": "سيتم حذف هذا السجل بشكل نهائي.",
+      "confirmDelete": "حذف"
+    },
+    "form": {
+      "titleCreate": "إضافة عميل محتمل",
+      "titleEdit": "تعديل عميل محتمل",
+      "titleView": "تفاصيل العميل المحتمل",
+      "readOnlyNotice": "هذا السجل للعرض فقط.",
+      "labels": {
+        "slug": "رقم المرجع",
+        "name": "الاسم الكامل",
+        "identity": "رقم الهوية",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "address": "العنوان",
+        "work": "المهنة",
+        "emergency": "هاتف الطوارئ",
+        "dateOfBirth": "تاريخ الميلاد",
+        "gender": "الجنس",
+        "religion": "الديانة"
+      },
+      "placeholders": {
+        "slug": "أدخل رقم المرجع",
+        "name": "أدخل الاسم الكامل"
+      },
+      "genderOptions": {
+        "male": "ذكر",
+        "female": "أنثى"
+      },
+      "religionOptions": {
+        "muslim": "مسلم",
+        "christian": "مسيحي"
+      },
+      "actions": {
+        "save": "حفظ"
+      },
+      "messages": {
+        "createSuccess": "تم إضافة العميل المحتمل بنجاح.",
+        "updateSuccess": "تم تحديث العميل المحتمل بنجاح.",
+        "errorTitle": "تعذر حفظ العميل المحتمل",
+        "errorDescription": "يرجى مراجعة البيانات والمحاولة مجددًا."
+      }
+    },
+    "messages": {
+      "deleteSuccess": "تم حذف العميل المحتمل بنجاح.",
+      "deleteErrorTitle": "تعذر حذف العميل المحتمل",
+      "deleteErrorDescription": "يرجى المحاولة مرة أخرى لاحقًا."
+    }
+  },
+  "documents": {
+    "title": "الوثائق",
+    "upload": "رفع وثيقة",
+    "viewType": "نوع العرض",
+    "grid": "شبكة",
+    "list": "قائمة"
+  },
+  "reports": {
+    "title": "التقارير",
+    "dateRange": "نطاق التاريخ",
+    "generate": "إنشاء تقرير"
+  },
+  "officeSettings": {
+    "title": "إعدادات المكتب",
+    "subtitle": "قم بضبط الموارد المشتركة المستخدمة في مكتبك.",
+    "actions": {
+      "refresh": "تحديث البيانات"
+    },
+    "tabs": {
+      "expenseCategories": "أنواع المصروفات",
+      "generalSettings": "الإعدادات العامة",
+      "serviceTypes": "أنواع الخدمات",
+      "procedurePlaceTypes": "أماكن الإجراءات",
+      "procedureTypes": "أنواع الإجراءات"
+    },
+    "expenseCategories": {
+      "title": "أنواع المصروفات",
+      "description": "أنشئ وعدل التصنيفات التي تجمع مصروفات المكتب.",
+      "add": "إضافة نوع",
+      "table": {
+        "name": "اسم النوع",
+        "actions": "الإجراءات",
+        "empty": "لا توجد أنواع مصروفات مسجلة.",
+        "error": "تعذّر تحميل أنواع المصروفات، يرجى إعادة المحاولة."
+      },
+      "pagination": {
+        "label": "الصفحة {{current}} من {{total}}"
+      },
+      "dialog": {
+        "createTitle": "إضافة نوع مصروف",
+        "editTitle": "تعديل نوع المصروف"
+      },
+      "form": {
+        "nameLabel": "اسم نوع المصروف",
+        "namePlaceholder": "أدخل اسم نوع المصروف",
+        "submitCreate": "إضافة",
+        "submitUpdate": "حفظ التعديلات"
+      },
+      "delete": {
+        "title": "حذف {{name}}؟",
+        "description": "لا يمكن التراجع عن هذه العملية، سيتم حذف النوع نهائيًا."
+      },
+      "messages": {
+        "createSuccess": "تم إنشاء نوع المصروف بنجاح.",
+        "updateSuccess": "تم تحديث نوع المصروف بنجاح.",
+        "deleteSuccess": "تم حذف نوع المصروف بنجاح.",
+        "saveErrorTitle": "تعذّر حفظ نوع المصروف",
+        "saveErrorDescription": "يرجى مراجعة البيانات والمحاولة مرة أخرى.",
+        "deleteErrorTitle": "تعذّر حذف نوع المصروف",
+        "deleteErrorDescription": "يرجى المحاولة لاحقًا."
+      }
+    },
+    "generalSettings": {
+      "title": "الهوية والشعار",
+      "description": "قم برفع حزمة الشعارات الخاصة بالمكتب واضبط ألوان الواجهة لوضعي النهار والليل.",
+      "form": {
+        "officeName": {
+          "label": "الاسم المعروض للمكتب",
+          "placeholder": "أدخل اسم المكتب كما سيظهر للمستخدمين"
+        },
+        "actions": {
+          "save": "حفظ إعدادات الهوية",
+          "submitting": "جارٍ الحفظ...",
+          "reset": "إعادة التحميل من الخادم"
+        },
+        "status": {
+          "loading": "جارٍ تحميل بيانات الهوية...",
+          "error": "تعذّر تحميل الإعدادات الحالية، يرجى المحاولة مجددًا.",
+          "ready": "يمكنك الآن تحديث إعدادات الهوية."
+        }
+      },
+      "metadata": {
+        "lastUpdated": "آخر تحديث"
+      },
+      "messages": {
+        "updateSuccess": "تم تحديث إعدادات الهوية بنجاح.",
+        "saveErrorTitle": "تعذّر حفظ إعدادات الهوية",
+        "saveErrorDescription": "يرجى مراجعة البيانات والمحاولة مرة أخرى."
+      },
+      "logos": {
+        "title": "مكتبة الشعارات",
+        "description": "ارفع شعارات عالية الدقة لكل سيناريو مدعوم. الصيغ المتاحة: SVG، PNG، JPG.",
+        "empty": "لم يتم اختيار شعار بعد",
+        "primary": {
+          "label": "أساسي",
+          "description": "الشعار الملون الكامل المستخدم على الخلفيات الفاتحة في التطبيق والموقع.",
+          "constraints": "المقاس الموصى به 1024×320 بكسل • خلفية شفافة • حتى 1 ميجابايت"
+        },
+        "light": {
+          "label": "للوضع الداكن",
+          "description": "شعار معكوس مهيأ للخلفيات الداكنة ووضع الليل.",
+          "constraints": "المقاس الموصى به 1024×320 بكسل • خلفية شفافة • حتى 1 ميجابايت"
+        },
+        "dark": {
+          "label": "للوضع الفاتح",
+          "description": "شعار محايد للخلفيات الفاتحة مثل المراسلات والمستندات المطبوعة.",
+          "constraints": "المقاس الموصى به 1024×320 بكسل • خلفية شفافة • حتى 1 ميجابايت"
+        },
+        "icon": {
+          "label": "أيقونة",
+          "description": "شعار مربع للاختصارات والأيقونات الصغيرة.",
+          "constraints": "المقاس الموصى به 512×512 بكسل • خلفية مصمتة • حتى 512 كيلوبايت"
+        }
+      },
+      "theme": {
+        "title": "نظام الألوان",
+        "description": "حدد الألوان الدقيقة للواجهة في وضعي النهار والليل.",
+        "fields": {
+          "primary": "اللون الرئيسي",
+          "surface": "لون السطح",
+          "accent": "لون الإبراز"
+        },
+        "modes": {
+          "light": {
+            "title": "وضع النهار",
+            "description": "يُطبق على واجهة التطبيق والموقع في الوضع الفاتح."
+          },
+          "dark": {
+            "title": "وضع الليل",
+            "description": "يُستخدم للأسطح الداكنة وتجربة الاستخدام الليلية."
+          }
+        },
+        "preview": {
+          "title": "معاينة مباشرة",
+          "placeholder": "اسم المكتب",
+          "badge": "منطقة العملاء",
+          "message": "تعرض هذه المعاينة كيفية ظهور شعارك مع الألوان المحددة.",
+          "primary": "اللون الرئيسي {{color}}",
+          "accent": "لون الإبراز {{color}}"
+        }
+      }
+    },
+    "placeholders": {
+      "shared": {
+        "message": "نقوم حالياً بتجهيز هذه الشاشة، ترقّبوا المزيد!"
+      },
+      "serviceTypes": {
+        "title": "أنواع الخدمات",
+        "description": "عرّف أنواع الخدمات التي يقدمها المكتب."
+      },
+      "procedurePlaceTypes": {
+        "title": "أماكن الإجراءات",
+        "description": "حافظ على قائمة أماكن الإجراءات ضمن سير عملك."
+      },
+      "procedureTypes": {
+        "title": "أنواع الإجراءات",
+        "description": "نظّم أنواع الإجراءات المستخدمة في إدارة القضايا."
+      }
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "profile": "إعدادات الملف الشخصي",
+    "preferences": "التفضيلات",
+    "appearance": "المظهر",
+    "rtlPreview": "معاينة RTL"
+  },
+  "validation": {
+    "email_required": "البريد الإلكتروني مطلوب"
+  }
+}

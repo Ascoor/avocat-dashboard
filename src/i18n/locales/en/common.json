@@ -1,0 +1,1011 @@
+{
+  "brand": {
+    "name": "Avocat"
+  },
+  "sidebar": {
+    "sections": {
+      "main": "Main",
+      "system": "System",
+      "website": "Website Management"
+    },
+    "toggle": {
+      "open": "Expand section",
+      "close": "Collapse section"
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "cases": "Cases",
+    "customer_service": "Customer Service",
+    "clients": "Clients",
+    "agents": "Agents",
+    "clients_no_agents": "Clients without Agents",
+    "lawyers": "Lawyers",
+    "documents": "Documents",
+    "work_tracking": "Work Tracking",
+    "sessions": "Sessions",
+    "procedures": "Procedures",
+    "services": "Services",
+    "unClients": "Prospects",
+    "reports": "Reports",
+    "settings": "Settings",
+    "office_settings": "Office Settings",
+    "courts_settings": "Courts",
+    "users_roles": "Users & Roles",
+    "archive": "Archive",
+    "courts_search": "Courts Search",
+    "website_pages": "Website Pages",
+    "website_team": "Team",
+    "website_achievements": "Achievements",
+    "website_settings": "Website Settings",
+    "login": "Login",
+    "register": "Register"
+  },
+  "home": {
+    "title": "Welcome to Avocat",
+    "subtitle": "Start building your next-generation legal operations platform."
+  },
+  "common": {
+    "theme": "Theme",
+    "language": "Language",
+    "logout": "Logout",
+    "profile": "Profile",
+    "dark": "Dark",
+    "light": "Light",
+    "notifications": "Notifications",
+    "menu": "Menu",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "Error",
+    "info": "Information",
+    "toggleLanguage": "Toggle language",
+    "welcome": "Welcome back",
+    "comingSoon": "Coming Soon",
+    "comingSoonDescription": "We are crafting this experience for you.",
+    "backToDashboard": "Back to dashboard",
+    "backToLanding": "Back to landing",
+    "expand": "Expand",
+    "collapse": "Collapse"
+  },
+  "table": {
+    "showing": "Showing",
+    "of": "of",
+    "entries": "entries",
+    "search": "Search...",
+    "export": "Export",
+    "exportExcel": "Export to Excel",
+    "exportCSV": "Export to CSV",
+    "noResults": "No results found",
+    "noData": "No data available",
+    "page": "Page",
+    "previous": "Previous",
+    "next": "Next",
+    "sortBy": "Sort by",
+    "noSort": "No sorting",
+    "sortDirection": {
+      "asc": "Ascending",
+      "desc": "Descending"
+    },
+    "clearSort": "Reset sorting",
+    "aria": {
+      "sortColumn": "Change sort column",
+      "toggleDirection": "Toggle sort direction",
+      "clearSort": "Clear sorting",
+      "exportCsv": "Export table as CSV",
+      "exportExcel": "Export table as Excel"
+    }
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "scheduled": "Scheduled",
+    "in_progress": "In Progress",
+    "closed": "Closed",
+    "suspended": "Suspended",
+    "postponed": "Postponed"
+  },
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "urgent": "Urgent"
+  },
+  "cases": {
+    "title": "Cases Management",
+    "caseTitle": "Case Title",
+    "client": "Client",
+    "lawyer": "Lawyer",
+    "status": "Status",
+    "priority": "Priority",
+    "createdDate": "Created Date",
+    "nextHearing": "Next Hearing",
+    "value": "Case Value",
+    "addCase": "Add New Case"
+  },
+  "clients": {
+    "title": "Clients",
+    "subtitle": "Keep an overview of your represented clients and their mandates.",
+    "addNew": "Add New Client",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "joinDate": "Join Date",
+    "list": {
+      "title": "Clients",
+      "subtitle": "Manage active clients, their contact details, and statuses.",
+      "add": "Add client",
+      "empty": "No clients have been added yet.",
+      "table": {
+        "slug": "Reference",
+        "name": "Name",
+        "identity": "National ID",
+        "phone": "Phone",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "confirmDeleteTitle": "Delete {name}?",
+      "confirmDeleteDescription": "This client record will be permanently removed.",
+      "confirmDelete": "Delete"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "messages": {
+      "toggleErrorTitle": "Unable to change status",
+      "toggleErrorDescription": "Please try again in a moment.",
+      "deleteSuccess": "Client deleted successfully.",
+      "deleteErrorTitle": "Unable to delete client",
+      "deleteErrorDescription": "Please try again later."
+    }
+  },
+  "agents": {
+    "title": "Agents Management",
+    "name": "Agent Name",
+    "email": "Email",
+    "phone": "Phone",
+    "department": "Department",
+    "clientsCount": "Clients Count",
+    "status": "Status",
+    "joinDate": "Join Date",
+    "addAgent": "Add New Agent"
+  },
+  "sessions": {
+    "title": "Sessions Management",
+    "caseTitle": "Case",
+    "date": "Date",
+    "type": "Type",
+    "status": "Status",
+    "lawyer": "Lawyer",
+    "court": "Court",
+    "duration": "Duration",
+    "addSession": "Add New Session",
+    "hearing": "Hearing",
+    "consultation": "Consultation",
+    "mediation": "Mediation",
+    "minutes": "minutes"
+  },
+  "procedures": {
+    "title": "Legal Procedures",
+    "caseTitle": "Case",
+    "type": "Procedure Type",
+    "status": "Status",
+    "assignedTo": "Assigned To",
+    "dueDate": "Due Date",
+    "priority": "Priority",
+    "addProcedure": "Add New Procedure"
+  },
+  "auth": {
+    "profile": "Profile",
+    "logout": "Sign out",
+    "session_expired": "Your session has expired. Please sign in again.",
+    "errors": {
+      "invalid_credentials": "The email or password you entered is incorrect."
+    },
+    "validation": {
+      "required": "This field is required.",
+      "email_invalid": "Enter a valid email address.",
+      "password_length": "Password must be at least 6 characters.",
+      "password_mismatch": "Passwords do not match."
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to manage your cases, clients, and hearings.",
+      "email": "Email",
+      "email_placeholder": "Enter your email address",
+      "password": "Password",
+      "password_placeholder": "Enter your password",
+      "show_password": "Show password",
+      "hide_password": "Hide password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign in",
+      "success": "Signed in successfully.",
+      "error": "We couldn't sign you in. Please try again.",
+      "after_register": "Account created successfully. Please sign in.",
+      "register_prompt": "Don't have an account?",
+      "register_cta": "Create one",
+      "swap_layout": "Swap sides",
+      "swap_layout_aria": "Swap the hero and form panels",
+      "signup_highlight_title": "New to Avocat?",
+      "signup_highlight_description": "Create your secure workspace and unlock premium legal operations tools."
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Join Avocat and unlock the full digital law office experience.",
+      "name": "Full name",
+      "name_placeholder": "Enter your full name",
+      "email": "Email",
+      "email_placeholder": "Enter your email address",
+      "password": "Password",
+      "password_placeholder": "Create a strong password",
+      "confirm_password": "Confirm password",
+      "confirm_password_placeholder": "Re-enter your password",
+      "submit": "Create account",
+      "success_title": "Welcome to Avocat",
+      "success_message": "Your account has been created successfully.",
+      "error_title": "Something went wrong",
+      "error_message": "We couldn't complete your registration. Please try again.",
+      "have_account": "Already have an account?",
+      "back_to_home": "Back to homepage",
+      "security_title": "Enterprise-grade protection",
+      "security_description": "Your credentials and client records are encrypted end-to-end."
+    },
+    "register": {
+      "title": "Create account"
+    }
+  },
+  "lawyers": {
+    "list": {
+      "title": "Lawyers",
+      "subtitle": "Manage your legal team profiles, credentials, and activity.",
+      "add": "Add Lawyer",
+      "table": {
+        "name": "Name",
+        "identity": "ID Number",
+        "license": "Bar Registration",
+        "class": "Practice Class",
+        "email": "Email",
+        "phone": "Phone",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "empty": "No lawyers have been added yet.",
+      "confirmDeleteTitle": "Remove {name}?",
+      "confirmDeleteDescription": "This action permanently deletes the lawyer profile.",
+      "confirmDelete": "Delete"
+    },
+    "detail": {
+      "title": "Lawyer Profile",
+      "about": "Personal Information",
+      "contact": "Contact Details",
+      "meta": "Registration",
+      "sessions": "Recent Sessions",
+      "procedures": "Recent Procedures"
+    },
+    "form": {
+      "titleCreate": "Add Lawyer",
+      "titleEdit": "Edit Lawyer",
+      "labels": {
+        "name": "Full name",
+        "birthdate": "Birthdate",
+        "identity_number": "National ID",
+        "law_reg_num": "Bar registration number",
+        "lawyer_class": "Practice class",
+        "email": "Email",
+        "phone_number": "Phone number",
+        "gender": "Gender",
+        "address": "Address",
+        "religion": "Religion"
+      },
+      "placeholders": {
+        "name": "Enter full name",
+        "identity_number": "Enter national ID",
+        "law_reg_num": "Enter registration number",
+        "email": "Enter email",
+        "phone_number": "Enter phone number",
+        "address": "Enter address"
+      },
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "religion": {
+        "muslim": "Muslim",
+        "christian": "Christian"
+      },
+      "class": {
+        "naqdh": "Cassation",
+        "isteenaf": "Appeal",
+        "ibtedai": "First Instance",
+        "general": "General roll"
+      },
+      "actions": {
+        "save": "Save",
+        "cancel": "Cancel"
+      },
+      "messages": {
+        "createSuccess": "Lawyer added successfully.",
+        "updateSuccess": "Lawyer updated successfully.",
+        "deleteSuccess": "Lawyer removed successfully.",
+        "error": "Unable to complete the request. Please try again."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome_title": "Hello, welcome back",
+    "welcome_subtitle": "Here's a quick snapshot of your practice today.",
+    "quick_actions": "Quick Actions",
+    "total_cases": "Total Cases",
+    "active_clients": "Active Clients",
+    "upcoming_sessions": "Upcoming Sessions",
+    "total_revenue": "Total Revenue",
+    "cases_by_status": "Cases by Status",
+    "recent_cases": "Recent Cases",
+    "view_all": "View all",
+    "new_case": "New case",
+    "add_client": "Add client",
+    "schedule_session": "Schedule session",
+    "manage_services": "Manage services",
+    "active": "Active",
+    "pending": "Pending",
+    "closed": "Closed",
+    "on_hold": "On Hold",
+    "errors": {
+      "stats": "Failed to load stats",
+      "chart": "Unable to load case distribution",
+      "recent": "Unable to load recent cases"
+    },
+    "sections": {
+      "customer_service": "Customer Service",
+      "agents": "Client Agents",
+      "clients_no_agents": "Clients without Agents",
+      "reports": "Reports",
+      "sessions": "Sessions",
+      "procedures": "Legal Procedures",
+      "services": "Services",
+      "settings": "Settings",
+      "office_settings": "Office Settings",
+      "users_roles": "Users & Roles",
+      "archive": "Archive",
+      "courts_search": "Courts Search"
+    },
+    "coming_soon": "This module is coming soon.",
+    "kpis": {
+      "openCases": "Open Cases",
+      "activeClients": "Active Clients",
+      "hearings": "Hearings This Week",
+      "revenue": "Monthly Revenue"
+    },
+    "recentActivity": "Recent Activity",
+    "casesByStatus": "Cases by Status",
+    "home": {
+      "welcome": {
+        "title": "Hello, welcome back",
+        "subtitle": "Overview of your latest activities and statistics"
+      },
+      "stats": [
+        {
+          "title": "Total Cases",
+          "value": "124",
+          "change": "+12%",
+          "icon": "cases",
+          "color": "text-primary"
+        },
+        {
+          "title": "Active Clients",
+          "value": "89",
+          "change": "+8%",
+          "icon": "clients",
+          "color": "text-accent"
+        },
+        {
+          "title": "Upcoming Sessions",
+          "value": "23",
+          "change": "+5%",
+          "icon": "sessions",
+          "color": "text-success"
+        },
+        {
+          "title": "Success Rate",
+          "value": "94%",
+          "change": "+3%",
+          "icon": "performance",
+          "color": "text-warning"
+        }
+      ],
+      "activities": {
+        "title": "Recent activities",
+        "subtitle": "Latest updates and activities in the system",
+        "items": [
+          {
+            "title": "New Case: Commercial Dispute",
+            "time": "1 hour ago",
+            "type": "case"
+          },
+          {
+            "title": "Court Session Scheduled",
+            "time": "3 hours ago",
+            "type": "session"
+          },
+          {
+            "title": "New Client Registered",
+            "time": "1 day ago",
+            "type": "client"
+          },
+          {
+            "title": "Monthly Report Ready",
+            "time": "2 days ago",
+            "type": "report"
+          }
+        ]
+      },
+      "tasks": {
+        "title": "Urgent tasks",
+        "subtitle": "Tasks that need immediate attention",
+        "items": [
+          {
+            "title": "Review Partnership Contract",
+            "deadline": "Today",
+            "priority": "high"
+          },
+          {
+            "title": "Prepare Defense Plea",
+            "deadline": "Tomorrow",
+            "priority": "high"
+          },
+          {
+            "title": "Follow up Real Estate Case",
+            "deadline": "Next Week",
+            "priority": "medium"
+          }
+        ],
+        "priorities": {
+          "high": "High",
+          "medium": "Medium"
+        }
+      }
+    }
+  },
+  "legalCases": {
+    "title": "Legal Cases",
+    "subtitle": "Manage case records, clients, and follow-up details in one place.",
+    "addCase": "Add New Case",
+    "fetchError": "Unable to load cases right now. Please try again later.",
+    "noClient": "No client",
+    "moreClients": "and {{count}} more",
+    "deleteSuccess": "Case deleted successfully.",
+    "deleteErrorTitle": "Failed to delete the case.",
+    "deleteErrorDescription": "Please try again or contact support if the problem persists.",
+    "confirmDelete": "Are you sure you want to delete \"{{title}}\"?",
+    "columns": {
+      "fileNumber": "File Number",
+      "clients": "Client",
+      "clientCapacity": "Client Capacity",
+      "subject": "Subject",
+      "caseType": "Case Type",
+      "status": "Status"
+    }
+  },
+  "legalCaseDetails": {
+    "title": "Case Details",
+    "subtitle": "Review and manage all the details and activities related to this case.",
+    "back": "Back",
+    "fetchError": "Unable to load case details at the moment.",
+    "sections": {
+      "basicInfo": "Basic Information",
+      "opponentInfo": "Opponent Information"
+    },
+    "tabs": {
+      "procedures": "Procedures",
+      "sessions": "Sessions",
+      "ads": "Legal Ads"
+    },
+    "fields": {
+      "slug": "File Number",
+      "title": "Case Title",
+      "status": "Status",
+      "caseType": "Case Type",
+      "caseSubType": "Case Subtype",
+      "clientCapacity": "Client Capacity",
+      "litigantName": "Opponent",
+      "litigantPhone": "Opponent Phone",
+      "lawyerName": "Opponent Lawyer",
+      "lawyerPhone": "Opponent Lawyer Phone",
+      "description": "Description"
+    },
+    "clients": {
+      "title": "Clients",
+      "subtitle": "Add or remove clients associated with this case.",
+      "addClient": "Add Client",
+      "loadErrorTitle": "Failed to load clients",
+      "loadErrorDescription": "We couldn't fetch clients list. Please try again.",
+      "duplicateClientTitle": "Client already added",
+      "duplicateClientDescription": "This client is already linked to the case.",
+      "noSelectionTitle": "No client selected",
+      "noSelectionDescription": "Choose at least one client before saving.",
+      "addSuccess": "Clients added successfully.",
+      "addErrorTitle": "Failed to add clients",
+      "addErrorDescription": "Please review the selected clients and try again.",
+      "removeSuccess": "Client removed successfully.",
+      "removeErrorTitle": "Failed to remove client",
+      "removeErrorDescription": "Please try again later.",
+      "searchPlaceholder": "Search for a client...",
+      "removeRow": "Remove",
+      "saveClients": "Save Clients",
+      "columns": {
+        "slug": "Office ID",
+        "name": "Name",
+        "phone": "Phone",
+        "actions": "Actions"
+      },
+      "empty": "No clients linked to this case yet.",
+      "noPhone": "Not provided",
+      "deleteClient": "Delete",
+      "deleteConfirmTitle": "Delete {{name}} from the case?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "confirmDelete": "Delete"
+    },
+    "courts": {
+      "title": "Courts",
+      "subtitle": "Track the courts and references associated with the case.",
+      "addCourt": "Add Court",
+      "loadErrorTitle": "Failed to load courts",
+      "loadErrorDescription": "We couldn't load available courts. Try again later.",
+      "noCourtsTitle": "No courts added",
+      "noCourtsDescription": "Add at least one court before saving.",
+      "missingFieldsTitle": "Missing information",
+      "missingFieldsDescription": "Please fill in all required court fields.",
+      "addSuccess": "Courts added successfully.",
+      "addErrorTitle": "Failed to add courts",
+      "addErrorDescription": "Something went wrong while saving courts.",
+      "removeSuccess": "Court removed successfully.",
+      "removeErrorTitle": "Failed to remove court",
+      "removeErrorDescription": "Please try again later.",
+      "caseNumberPlaceholder": "Case number",
+      "selectYear": "Select year",
+      "selectLevel": "Select level",
+      "selectCourt": "Select court",
+      "removeRow": "Remove",
+      "saveCourts": "Save Courts",
+      "columns": {
+        "court": "Court",
+        "level": "Level",
+        "caseNumber": "Case Number",
+        "caseYear": "Case Year",
+        "actions": "Actions"
+      },
+      "empty": "No courts linked to this case yet.",
+      "deleteCourt": "Delete",
+      "deleteConfirmTitle": "Delete {{name}} from the case?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "confirmDelete": "Delete"
+    },
+    "procedures": {
+      "title": "Procedures",
+      "subtitle": "Monitor the procedures undertaken for this case.",
+      "addButton": "Add Procedure",
+      "loadErrorTitle": "Failed to load procedures",
+      "loadErrorDescription": "We couldn't fetch procedures. Please try again.",
+      "empty": "No procedures recorded for this case yet.",
+      "columns": {
+        "type": "Procedure",
+        "lawyer": "Lawyer",
+        "endDate": "End Date",
+        "job": "Required",
+        "result": "Result",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "editButton": "Edit",
+      "deleteButton": "Delete",
+      "deleteSuccess": "Procedure deleted successfully.",
+      "deleteErrorTitle": "Failed to delete procedure",
+      "deleteErrorDescription": "Please try again later.",
+      "deleteConfirmTitle": "Delete this procedure?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "metaErrorTitle": "Failed to load procedure data",
+      "metaErrorDescription": "Could not load supporting data for the procedure form.",
+      "updateSuccess": "Procedure updated successfully.",
+      "createSuccess": "Procedure added successfully.",
+      "saveErrorTitle": "Failed to save procedure",
+      "saveErrorDescription": "Review the form fields and try again.",
+      "editTitle": "Edit Procedure",
+      "addTitle": "Add Procedure",
+      "fields": {
+        "type": "Procedure Type",
+        "placeType": "Authority Type",
+        "placeName": "Authority Name",
+        "lawyer": "Lawyer",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "job": "Required Action",
+        "result": "Result",
+        "status": "Status",
+        "cost": "Official Fees",
+        "fee": "Procedure Fee",
+        "otherCost": "Other Expenses"
+      },
+      "status": {
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "notExecuted": "Not Executed"
+      },
+      "selectType": "Select procedure type",
+      "selectPlaceType": "Select authority type",
+      "selectLawyer": "Select lawyer",
+      "updateButton": "Update",
+      "createButton": "Save"
+    },
+    "sessions": {
+      "title": "Sessions",
+      "subtitle": "Track the case hearings and session outcomes.",
+      "addButton": "Add Session",
+      "loadErrorTitle": "Failed to load sessions",
+      "loadErrorDescription": "We couldn't fetch sessions. Please try again.",
+      "empty": "No sessions recorded for this case yet.",
+      "columns": {
+        "date": "Session Date",
+        "lawyer": "Lawyer",
+        "roll": "Roll",
+        "court": "Court",
+        "orders": "Orders",
+        "result": "Result",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "editButton": "Edit",
+      "deleteButton": "Delete",
+      "deleteSuccess": "Session deleted successfully.",
+      "deleteErrorTitle": "Failed to delete session",
+      "deleteErrorDescription": "Please try again later.",
+      "deleteConfirmTitle": "Delete this session?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "metaErrorTitle": "Failed to load session data",
+      "metaErrorDescription": "Could not load metadata required for the session form.",
+      "updateSuccess": "Session updated successfully.",
+      "createSuccess": "Session added successfully.",
+      "saveErrorTitle": "Failed to save session",
+      "saveErrorDescription": "Review the form fields and try again.",
+      "editTitle": "Edit Session",
+      "addTitle": "Add Session",
+      "fields": {
+        "court": "Court",
+        "type": "Session Type",
+        "lawyer": "Lawyer",
+        "sessionDate": "Session Date",
+        "sessionRoll": "Roll",
+        "courtDepartment": "Court Department",
+        "orders": "Orders",
+        "result": "Result",
+        "notes": "Notes",
+        "status": "Status",
+        "cost1": "Official Fees",
+        "cost2": "Session Fee",
+        "cost3": "Other Expenses",
+        "judgment": "Judgment"
+      },
+      "status": {
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "selectCourt": "Select court",
+      "selectType": "Select session type",
+      "selectLawyer": "Select lawyer",
+      "updateButton": "Update",
+      "createButton": "Save"
+    },
+    "ads": {
+      "title": "Legal Ads",
+      "subtitle": "Manage legal advertisements linked to this case.",
+      "addButton": "Add Legal Ad",
+      "loadErrorTitle": "Failed to load legal ads",
+      "loadErrorDescription": "We couldn't fetch legal ads. Please try again.",
+      "empty": "No legal ads recorded for this case yet.",
+      "columns": {
+        "type": "Ad Type",
+        "number": "Number",
+        "date": "Date",
+        "status": "Status",
+        "details": "Details",
+        "actions": "Actions"
+      },
+      "editButton": "Edit",
+      "deleteButton": "Delete",
+      "deleteSuccess": "Legal ad deleted successfully.",
+      "deleteErrorTitle": "Failed to delete legal ad",
+      "deleteErrorDescription": "Please try again later.",
+      "deleteConfirmTitle": "Delete this legal ad?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "metaErrorTitle": "Failed to load ad data",
+      "metaErrorDescription": "Could not load metadata required for the ad form.",
+      "updateSuccess": "Legal ad updated successfully.",
+      "createSuccess": "Legal ad added successfully.",
+      "saveErrorTitle": "Failed to save legal ad",
+      "saveErrorDescription": "Review the form fields and try again.",
+      "editTitle": "Edit Legal Ad",
+      "addTitle": "Add Legal Ad",
+      "fields": {
+        "type": "Ad Type",
+        "number": "Ad Number",
+        "date": "Date",
+        "details": "Details",
+        "status": "Status"
+      },
+      "status": {
+        "active": "Active",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "selectType": "Select ad type",
+      "updateButton": "Update",
+      "createButton": "Save"
+    }
+  },
+  "unClients": {
+    "title": "Clients without Mandate",
+    "subtitle": "Track individuals who are not yet represented by your office."
+  },
+  "unclients": {
+    "list": {
+      "title": "Prospects",
+      "subtitle": "Manage potential clients who have not been onboarded yet.",
+      "add": "Add prospect",
+      "empty": "No prospects have been added yet.",
+      "table": {
+        "slug": "Reference",
+        "name": "Name",
+        "identity": "National ID",
+        "phone": "Phone",
+        "email": "Email",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "confirmDeleteTitle": "Delete {name}?",
+      "confirmDeleteDescription": "This record will be permanently removed.",
+      "confirmDelete": "Delete"
+    },
+    "form": {
+      "titleCreate": "Add prospect",
+      "titleEdit": "Edit prospect",
+      "titleView": "Prospect details",
+      "readOnlyNotice": "This record is for viewing only.",
+      "labels": {
+        "slug": "Reference number",
+        "name": "Full name",
+        "identity": "National ID",
+        "phone": "Phone number",
+        "email": "Email",
+        "address": "Address",
+        "work": "Occupation",
+        "emergency": "Emergency contact",
+        "dateOfBirth": "Date of birth",
+        "gender": "Gender",
+        "religion": "Religion"
+      },
+      "placeholders": {
+        "slug": "Enter reference number",
+        "name": "Enter full name"
+      },
+      "genderOptions": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "religionOptions": {
+        "muslim": "Muslim",
+        "christian": "Christian"
+      },
+      "actions": {
+        "save": "Save"
+      },
+      "messages": {
+        "createSuccess": "Prospect added successfully.",
+        "updateSuccess": "Prospect updated successfully.",
+        "errorTitle": "Unable to save prospect",
+        "errorDescription": "Review the information and try again."
+      }
+    },
+    "messages": {
+      "deleteSuccess": "Prospect deleted successfully.",
+      "deleteErrorTitle": "Unable to delete prospect",
+      "deleteErrorDescription": "Please try again later."
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "upload": "Upload Document",
+    "viewType": "View Type",
+    "grid": "Grid",
+    "list": "List"
+  },
+  "reports": {
+    "title": "Reports",
+    "dateRange": "Date Range",
+    "generate": "Generate Report"
+  },
+  "officeSettings": {
+    "title": "Office settings",
+    "subtitle": "Configure shared resources used across your office.",
+    "actions": {
+      "refresh": "Refresh data"
+    },
+    "tabs": {
+      "expenseCategories": "Expense categories",
+      "generalSettings": "General settings",
+      "serviceTypes": "Service types",
+      "procedurePlaceTypes": "Procedure place types",
+      "procedureTypes": "Procedure types"
+    },
+    "expenseCategories": {
+      "title": "Expense categories",
+      "description": "Create and update the categories that group office expenses.",
+      "add": "Add category",
+      "table": {
+        "name": "Category name",
+        "actions": "Actions",
+        "empty": "No expense categories found.",
+        "error": "We couldn't load expense categories. Try refreshing."
+      },
+      "pagination": {
+        "label": "Page {{current}} of {{total}}"
+      },
+      "dialog": {
+        "createTitle": "Add expense category",
+        "editTitle": "Edit expense category"
+      },
+      "form": {
+        "nameLabel": "Category name",
+        "namePlaceholder": "Enter category name",
+        "submitCreate": "Create",
+        "submitUpdate": "Save changes"
+      },
+      "delete": {
+        "title": "Delete {{name}}?",
+        "description": "This action cannot be undone. The category will be permanently removed."
+      },
+      "messages": {
+        "createSuccess": "Expense category created successfully.",
+        "updateSuccess": "Expense category updated successfully.",
+        "deleteSuccess": "Expense category deleted successfully.",
+        "saveErrorTitle": "Unable to save expense category",
+        "saveErrorDescription": "Please review the information and try again.",
+        "deleteErrorTitle": "Unable to delete expense category",
+        "deleteErrorDescription": "Please try again later."
+      }
+    },
+    "generalSettings": {
+      "title": "Branding and identity",
+      "description": "Upload branded logo sets and control the office colors for light and dark modes.",
+      "form": {
+        "officeName": {
+          "label": "Office display name",
+          "placeholder": "Enter the office name as it should appear"
+        },
+        "actions": {
+          "save": "Save branding settings",
+          "submitting": "Saving...",
+          "reset": "Reload from server"
+        },
+        "status": {
+          "loading": "Loading branding details...",
+          "error": "We couldn't load the current settings. Try refreshing.",
+          "ready": "Branding settings are ready to update."
+        }
+      },
+      "metadata": {
+        "lastUpdated": "Last updated"
+      },
+      "messages": {
+        "updateSuccess": "Branding settings updated successfully.",
+        "saveErrorTitle": "Unable to save branding settings",
+        "saveErrorDescription": "Please review the form and try again."
+      },
+      "logos": {
+        "title": "Logo library",
+        "description": "Upload high-resolution logos for each supported context. Supported formats: SVG, PNG, JPG.",
+        "empty": "No logo selected yet",
+        "primary": {
+          "label": "Primary",
+          "description": "Full-color logo used on light backgrounds across the application and website headers.",
+          "constraints": "Recommended size 1024x320 px • Transparent background • Up to 1 MB"
+        },
+        "light": {
+          "label": "On dark",
+          "description": "Inverted logo optimised for dark backgrounds and night mode components.",
+          "constraints": "Recommended size 1024x320 px • Transparent background • Up to 1 MB"
+        },
+        "dark": {
+          "label": "On light",
+          "description": "Neutral logo for light backgrounds such as printed letters and PDF exports.",
+          "constraints": "Recommended size 1024x320 px • Transparent background • Up to 1 MB"
+        },
+        "icon": {
+          "label": "Icon",
+          "description": "Square mark for favicons, mobile shortcuts, and compact placements.",
+          "constraints": "Recommended size 512x512 px • Solid background • Up to 512 KB"
+        }
+      },
+      "theme": {
+        "title": "Color system",
+        "description": "Set precise colors for the interface in day (light) and night (dark) modes.",
+        "fields": {
+          "primary": "Primary",
+          "surface": "Surface",
+          "accent": "Accent"
+        },
+        "modes": {
+          "light": {
+            "title": "Day mode",
+            "description": "Applied across the web app and public website during daylight mode."
+          },
+          "dark": {
+            "title": "Night mode",
+            "description": "Used for dark UI surfaces and night-friendly layouts."
+          }
+        },
+        "preview": {
+          "title": "Live preview",
+          "placeholder": "Office name",
+          "badge": "Client area",
+          "message": "These colors represent how your logo will appear in context.",
+          "primary": "Primary {{color}}",
+          "accent": "Accent {{color}}"
+        }
+      }
+    },
+    "placeholders": {
+      "shared": {
+        "message": "We are preparing this section. Stay tuned!"
+      },
+      "serviceTypes": {
+        "title": "Service types",
+        "description": "Define the types of services that your office provides."
+      },
+      "procedurePlaceTypes": {
+        "title": "Procedure place types",
+        "description": "Maintain the list of procedure locations for your workflow."
+      },
+      "procedureTypes": {
+        "title": "Procedure types",
+        "description": "Organize the procedure types used in case management."
+      }
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile Settings",
+    "preferences": "Preferences",
+    "appearance": "Appearance",
+    "rtlPreview": "RTL Preview"
+  },
+  "validation": {
+    "email_required": "Email is required"
+  }
+}

@@ -1,575 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap');
+
+@import './styles/theme-tokens.css';
+@import './styles/radix-vars.css';
+@import './styles/dashboard-shell.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* ========= Base ========= */
 @layer base {
   :root {
-    /* ═══════════════════════════════════════════════════════════════ */
-    /* AVOCAT LAW FIRM - ADVANCED DESIGN TOKENS SYSTEM */
-    /* Legal Professional Theme - Light Mode */
-    /* ═══════════════════════════════════════════════════════════════ */
+    /* منطق ألوان إضافي (logic colors) للروتين اليومي */
+    --navbar-link-hero: 0 0% 100%;
+    --navbar-link-hero-muted: 0 0% 90%;
+    --navbar-link-solid: var(--foreground);
+    --navbar-link-muted: 220 10% 45%;
 
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SURFACE & NEUTRAL COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --surface: 0 0% 100%;
-    --surface-raised: 0 0% 98%;
-    --surface-overlay: 0 0% 100%;
-    --card-elevated: 0 0% 99%;
-    
-    --neutral-50: 210 40% 98%;
-    --neutral-100: 214 32% 95%;
-    --neutral-700: 215 16% 47%;
-    --neutral-900: 222 47% 11%;
-    
-    /* Base semantic tokens */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    
-    --input: 214 32% 91%;
-    --border: 214 32% 91%;
-    --ring: 222 47% 15%;
+    --chip-bg-soft: 220 20% 96%;
+    --chip-border-soft: 220 18% 88%;
+    --chip-text-soft: 220 25% 35%;
 
-    /* ─────────────────────────────────────────────────────────────── */
-    /* BRAND & PRIMARY COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --brand-primary: 222 47% 15%;
-    --brand-on: 0 0% 100%;
-    --brand-subtle: 222 47% 95%;
-    
-    /* Gold - Luxury & Excellence */
-    --gold: 38 92% 50%;
-    --gold-muted: 38 70% 45%;
-    --gold-light: 45 90% 65%;
-    
-    /* Primary tokens */
-    --primary: 222 47% 15%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 222 47% 25%;
-    
-    /* Accent colors */
-    --accent: 38 92% 50%;
-    --accent-foreground: 222 47% 11%;
-    --accent-mint: 160 84% 39%;
-    --accent-amber: 38 92% 50%;
-    
-    /* Exclusive/Premium colors */
-    --exclusive: 265 89% 78%;
-    --exclusive-muted: 265 60% 60%;
-    --exclusive-foreground: 222 47% 11%;
-    --exclusive-glow: 265 89% 85%;
-    
-    /* Neon accents */
-    --neon: 160 100% 50%;
-    --neon-glow: 160 100% 70%;
-    --neon-muted: 160 70% 40%;
-    
-    /* Slate neutrals */
-    --slate: 215 25% 27%;
-    --slate-light: 215 20% 65%;
-    --slate-bg: 215 30% 15%;
+    --pill-primary-bg: var(--primary);
+    --pill-primary-text: var(--primary-foreground);
 
-    /* ─────────────────────────────────────────────────────────────── */
-    /* LEGAL SEMANTIC COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --legal-primary-700: 222 47% 15%;
-    --legal-primary-500: 222 47% 35%;
-    --legal-primary-300: 222 47% 65%;
-    
-    --legal-neutral-900: 222 47% 11%;
-    --legal-neutral-700: 215 16% 47%;
-    --legal-neutral-500: 214 20% 69%;
-    --legal-neutral-300: 214 32% 85%;
-    --legal-neutral-100: 214 32% 95%;
-    
-    --legal-success-500: 142 71% 45%;
-    --legal-warning-500: 38 92% 50%;
-    --legal-danger-500: 0 84% 60%;
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SIDEBAR TOKENS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --sidebar-background: 222 47% 15%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 20%;
-    --sidebar-primary: 38 92% 50%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 222 47% 20%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-ring: 38 92% 50%;
-    
-    /* Sidebar interaction states */
-    --sidebar-text-muted: 210 30% 70%;
-    --sidebar-hover-foreground: 0 0% 100%;
-    --sidebar-hover-highlight: 38 92% 50%;
-    --sidebar-item-hover-bg: 222 47% 20%;
-    --sidebar-item-active-bg: 222 47% 25%;
-    --sidebar-item-active-shadow: 0 4px 12px hsl(38 92% 50% / 0.3);
-    --sidebar-subitem-hover-bg: 222 47% 18%;
-    --sidebar-subitem-active-bg: 222 47% 22%;
-    --sidebar-subitem-shadow: 0 2px 8px hsl(222 47% 10% / 0.2);
-    
-    /* Sidebar glass/shell effects */
-    --sidebar-shell-blur: blur(12px);
-    --sidebar-shell-shadow: 0 8px 32px hsl(222 47% 10% / 0.4);
-    --sidebar-glass-background: 222 47% 15% / 0.8;
-    --sidebar-glass-border: 222 47% 30% / 0.3;
-    --sidebar-glass-shadow: 0 8px 32px hsl(222 47% 10% / 0.6);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* HEADER TOKENS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --header-surface-gradient: linear-gradient(135deg, hsl(222 47% 15%) 0%, hsl(222 47% 20%) 100%);
-    --header-shell-blur: blur(12px);
-    --header-shell-shadow: 0 4px 24px hsl(222 47% 10% / 0.3);
-    --header-shell-border: 222 47% 25%;
-    --header-glass-background: 0 0% 100% / 0.7;
-    --header-glass-border: 214 32% 91% / 0.5;
-    --header-glass-shadow: 0 4px 24px hsl(222 47% 15% / 0.1);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* GRADIENTS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 15%) 0%, hsl(222 47% 25%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 90% 60%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 32% 98%) 100%);
-    --gradient-exclusive: linear-gradient(135deg, hsl(265 89% 78%) 0%, hsl(265 60% 60%) 100%);
-    --gradient-neon: linear-gradient(135deg, hsl(160 100% 50%) 0%, hsl(160 70% 40%) 100%);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SHADOWS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --shadow-sm: 0 1px 2px 0 hsl(222 47% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(222 47% 15% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(222 47% 15% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(222 47% 15% / 0.15);
-    --shadow-2xl: 0 25px 50px -12px hsl(222 47% 15% / 0.25);
-    --shadow-gold: 0 0 20px hsl(38 92% 50% / 0.3);
-    --shadow-neon: 0 0 30px hsl(160 100% 50% / 0.4);
-    
-    /* Legal icon shadows */
-    --legal-icon-shadow-soft: 0 2px 8px hsl(222 47% 15% / 0.08);
-    --legal-icon-shadow-hero: 0 8px 24px hsl(38 92% 50% / 0.2);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* BORDER RADIUS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --radius: 0.75rem;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --radius-2xl: 2rem;
-    
-    /* Legal icon metrics */
-    --legal-icon-corner-inner: 0.25rem;
-    --legal-icon-corner-outer: 0.5rem;
-    --legal-icon-stroke-24: 2px;
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SPACING SCALE */
-    /* ─────────────────────────────────────────────────────────────── */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-    --spacing-3xl: 4rem;
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* DESTRUCTIVE */
-    /* ─────────────────────────────────────────────────────────────── */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --badge-gold-bg: var(--gold-light);
+    --badge-gold-border: var(--gold-muted);
+    --badge-gold-text: var(--gold-muted);
   }
 
   .dark {
-    /* ═══════════════════════════════════════════════════════════════ */
-    /* AVOCAT LAW FIRM - DARK MODE DESIGN TOKENS */
-    /* Legal Professional Theme - Dark Mode */
-    /* ═══════════════════════════════════════════════════════════════ */
+    --navbar-link-hero: 0 0% 100%;
+    --navbar-link-hero-muted: 0 0% 82%;
+    --navbar-link-solid: 210 40% 96%;
+    --navbar-link-muted: 220 10% 70%;
 
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SURFACE & NEUTRAL COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --surface: 222 47% 8%;
-    --surface-raised: 222 47% 11%;
-    --surface-overlay: 222 47% 13%;
-    --card-elevated: 222 47% 14%;
-    
-    --neutral-50: 222 47% 16%;
-    --neutral-100: 222 47% 20%;
-    --neutral-700: 215 20% 65%;
-    --neutral-900: 210 40% 98%;
-    
-    /* Base semantic tokens */
-    --background: 222 47% 8%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    
-    --secondary: 222 47% 16%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 16%;
-    --muted-foreground: 215 20% 65%;
-    
-    --input: 222 47% 20%;
-    --border: 222 47% 20%;
-    --ring: 38 92% 55%;
+    --chip-bg-soft: 220 24% 16%;
+    --chip-border-soft: 220 24% 22%;
+    --chip-text-soft: 220 18% 80%;
 
-    /* ─────────────────────────────────────────────────────────────── */
-    /* BRAND & PRIMARY COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --brand-primary: 210 40% 98%;
-    --brand-on: 222 47% 11%;
-    --brand-subtle: 222 47% 16%;
-    
-    /* Gold - Luxury & Excellence (brighter in dark mode) */
-    --gold: 38 92% 55%;
-    --gold-muted: 38 80% 50%;
-    --gold-light: 45 90% 70%;
-    
-    /* Primary tokens */
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-    --primary-glow: 210 40% 95%;
-    
-    /* Accent colors */
-    --accent: 38 92% 55%;
-    --accent-foreground: 222 47% 11%;
-    --accent-mint: 160 84% 45%;
-    --accent-amber: 38 92% 55%;
-    
-    /* Exclusive/Premium colors */
-    --exclusive: 265 89% 85%;
-    --exclusive-muted: 265 70% 65%;
-    --exclusive-foreground: 222 47% 11%;
-    --exclusive-glow: 265 89% 90%;
-    
-    /* Neon accents (brighter in dark) */
-    --neon: 160 100% 60%;
-    --neon-glow: 160 100% 80%;
-    --neon-muted: 160 80% 45%;
-    
-    /* Slate neutrals */
-    --slate: 215 25% 75%;
-    --slate-light: 215 20% 85%;
-    --slate-bg: 215 30% 12%;
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* LEGAL SEMANTIC COLORS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --legal-primary-700: 210 40% 90%;
-    --legal-primary-500: 222 47% 65%;
-    --legal-primary-300: 222 47% 35%;
-    
-    --legal-neutral-900: 210 40% 98%;
-    --legal-neutral-700: 215 20% 65%;
-    --legal-neutral-500: 214 20% 50%;
-    --legal-neutral-300: 214 32% 25%;
-    --legal-neutral-100: 214 32% 16%;
-    
-    --legal-success-500: 142 71% 50%;
-    --legal-warning-500: 38 92% 55%;
-    --legal-danger-500: 0 84% 65%;
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SIDEBAR TOKENS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --sidebar-background: 222 47% 11%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 20%;
-    --sidebar-primary: 38 92% 55%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 222 47% 16%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-ring: 38 92% 55%;
-    
-    /* Sidebar interaction states */
-    --sidebar-text-muted: 210 30% 60%;
-    --sidebar-hover-foreground: 210 40% 100%;
-    --sidebar-hover-highlight: 38 92% 60%;
-    --sidebar-item-hover-bg: 222 47% 16%;
-    --sidebar-item-active-bg: 222 47% 20%;
-    --sidebar-item-active-shadow: 0 4px 12px hsl(38 92% 55% / 0.4);
-    --sidebar-subitem-hover-bg: 222 47% 14%;
-    --sidebar-subitem-active-bg: 222 47% 18%;
-    --sidebar-subitem-shadow: 0 2px 8px hsl(222 47% 5% / 0.3);
-    
-    /* Sidebar glass/shell effects */
-    --sidebar-shell-blur: blur(12px);
-    --sidebar-shell-shadow: 0 8px 32px hsl(0 0% 0% / 0.6);
-    --sidebar-glass-background: 222 47% 11% / 0.9;
-    --sidebar-glass-border: 222 47% 30% / 0.4;
-    --sidebar-glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.8);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* HEADER TOKENS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --header-surface-gradient: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 15%) 100%);
-    --header-shell-blur: blur(12px);
-    --header-shell-shadow: 0 4px 24px hsl(0 0% 0% / 0.5);
-    --header-shell-border: 222 47% 20%;
-    --header-glass-background: 222 47% 11% / 0.7;
-    --header-glass-border: 222 47% 20% / 0.5;
-    --header-glass-shadow: 0 4px 24px hsl(0 0% 0% / 0.6);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* GRADIENTS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 15%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(45 90% 65%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 47% 13%) 100%);
-    --gradient-exclusive: linear-gradient(135deg, hsl(265 89% 85%) 0%, hsl(265 70% 65%) 100%);
-    --gradient-neon: linear-gradient(135deg, hsl(160 100% 60%) 0%, hsl(160 80% 45%) 100%);
-
-    /* ─────────────────────────────────────────────────────────────── */
-    /* SHADOWS */
-    /* ─────────────────────────────────────────────────────────────── */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.6);
-    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.7);
-    --shadow-gold: 0 0 25px hsl(38 92% 55% / 0.4);
-    --shadow-neon: 0 0 35px hsl(160 100% 60% / 0.5);
-    
-    /* Legal icon shadows */
-    --legal-icon-shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.2);
-    --legal-icon-shadow-hero: 0 8px 24px hsl(38 92% 55% / 0.3);
-
-    /* Border radius, spacing, and metrics remain the same */
-    
-    /* ─────────────────────────────────────────────────────────────── */
-    /* DESTRUCTIVE */
-    /* ─────────────────────────────────────────────────────────────── */
-    --destructive: 0 63% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --badge-gold-bg: 45 32% 16%;
+    --badge-gold-border: 45 80% 55%;
+    --badge-gold-text: 45 90% 70%;
   }
-}
 
-@layer base {
+  html,
+  body {
+    @apply min-h-screen antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    margin: 0;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  #root {
+    @apply flex min-h-screen flex-col overflow-x-hidden;
+  }
+
+  :root,
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-image: linear-gradient(
+      180deg,
+      hsl(var(--accent) / 0.55),
+      hsl(var(--primary) / 0.7)
+    );
+  }
+
+  html.dark body::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+      180deg,
+      hsl(var(--gold) / 0.35),
+      hsl(var(--neon) / 0.6)
+    );
+  }
+
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: 'cv11', 'ss01';
+  html[lang='ar'] body {
+    font-family: 'Cairo', 'Amiri', 'Inter', var(--font-display, 'Inter'), sans-serif;
   }
 
-  /* RTL Support */
-  [dir="rtl"] {
-    direction: rtl;
+  html[lang='ar'] .font-display {
+    font-family: 'Cairo', 'Amiri', 'Inter', var(--font-display, 'Inter'), sans-serif;
   }
 
-  [dir="ltr"] {
-    direction: ltr;
+  html[lang='en'] body {
+    font-family: 'Inter', 'Outfit', 'Cairo', var(--font-display, 'Inter'), sans-serif;
+  }
+
+  /* Dark CTA background */
+  .bg-cta-dark {
+    @apply bg-gradient-to-br from-primary via-primary-glow to-slate-bg;
+    background-image: url('/textures/stars.svg');
+    background-size: cover;
+    opacity: 0.9;
   }
 }
 
-@layer utilities {
-  /* ═══════════════════════════════════════════════════════════════ */
-  /* DESIGN TOKENS UTILITY CLASSES */
-  /* ═══════════════════════════════════════════════════════════════ */
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* GRADIENT UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .gradient-hero {
-    background: var(--gradient-hero);
+/* ========= Components ========= */
+@layer components {
+  /* عناوين الأقسام */
+  .section-title {
+    font-family: 'Poppins', 'Cairo', 'Outfit', 'Inter', var(--font-display, 'Inter'), sans-serif;
+    letter-spacing: 0.08em;
+    color: hsl(var(--title-color-light));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    text-shadow:
+      0 0 10px rgba(175, 220, 255, 0.25),
+      0 0 20px rgba(175, 220, 255, 0.15),
+      1px 2px 4px rgba(0, 0, 0, 0.35);
   }
 
-  .gradient-gold {
-    background: var(--gradient-gold);
+  .section-title::after {
+    content: '';
+    display: block;
+    margin-top: 0.4rem;
+    height: 3px;
+    width: 64px;
+    border-radius: 999px;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.1)
+    );
   }
 
-  .gradient-card {
-    background: var(--gradient-card);
+  .dark .section-title {
+    color: hsl(var(--title-color-dark));
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+    text-shadow:
+      0 0 12px rgba(var(--title-glow-dark), 0.3),
+      0 0 24px rgba(var(--title-glow-dark), 0.2),
+      0 0 40px rgba(var(--title-glow-dark), 0.35),
+      1px 2px 6px rgba(0, 0, 0, 0.45);
   }
 
-  .gradient-exclusive {
-    background: var(--gradient-exclusive);
+  .dark .section-title::after {
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.08)
+    );
   }
 
-  .gradient-neon {
-    background: var(--gradient-neon);
+  /* شارة / بادج ناعمة */
+  .chip-soft {
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: hsl(var(--chip-bg-soft));
+    border: 1px solid hsl(var(--chip-border-soft));
+    color: hsl(var(--chip-text-soft));
   }
 
-  .gradient-header-surface {
-    background: var(--header-surface-gradient);
-  }
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* SHADOW UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .shadow-custom-sm {
-    box-shadow: var(--shadow-sm);
-  }
-
-  .shadow-custom-md {
-    box-shadow: var(--shadow-md);
-  }
-
-  .shadow-custom-lg {
+  .pill-primary {
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background-color: hsl(var(--pill-primary-bg));
+    color: hsl(var(--pill-primary-text));
     box-shadow: var(--shadow-lg);
   }
 
-  .shadow-custom-xl {
+  .badge-gold {
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: hsl(var(--badge-gold-bg));
+    border: 1px solid hsl(var(--badge-gold-border));
+    color: hsl(var(--badge-gold-text));
+  }
+
+  /* روابط الـ Navbar */
+  .nav-link-hero {
+    color: hsl(var(--navbar-link-hero-muted));
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+  }
+
+  .nav-link-hero:hover {
+    color: hsl(var(--navbar-link-hero));
+    text-shadow: 0 0 12px hsl(var(--neon-glow) / 0.4);
+  }
+
+  .nav-link-solid {
+    color: hsl(var(--navbar-link-solid));
+    transition: color 0.18s ease;
+  }
+
+  .nav-link-solid-muted {
+    color: hsl(var(--navbar-link-muted));
+  }
+
+  .nav-link-solid:hover {
+    color: hsl(var(--primary));
+  }
+
+  /* بطاقات قانونية */
+  .card-legal {
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card) / 0.98),
+      hsl(var(--card-elevated) / 0.98)
+    );
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-lg);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .card-legal {
+    background: linear-gradient(
+      150deg,
+      hsl(var(--card) / 0.98),
+      hsl(var(--card-elevated) / 0.92)
+    );
+    border-color: hsl(var(--border) / 0.55);
     box-shadow: var(--shadow-xl);
   }
 
-  .shadow-custom-2xl {
+  .card-legal:hover {
+    transform: translateY(-3px);
     box-shadow: var(--shadow-2xl);
   }
+}
 
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
+/* ========= Utilities ========= */
+@layer utilities {
+  .neon-text {
+    color: hsl(var(--neon));
+    text-shadow:
+      0 0 6px hsl(var(--neon-glow) / 0.75),
+      0 0 18px hsl(var(--neon-glow) / 0.35),
+      0 0 30px hsl(var(--neon-glow) / 0.18);
   }
 
-  .shadow-neon {
-    box-shadow: var(--shadow-neon);
+  .neon-text-muted {
+    color: hsl(var(--neon-muted));
   }
 
-  .shadow-legal-icon-soft {
-    box-shadow: var(--legal-icon-shadow-soft);
+  .dark .neon-text-muted {
+    color: hsl(var(--neon));
+    opacity: 0.9;
   }
 
-  .shadow-legal-icon-hero {
-    box-shadow: var(--legal-icon-shadow-hero);
+  .neon-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--neon) / 0.55),
+      hsl(var(--neon) / 0.8),
+      transparent
+    );
+    box-shadow: 0 0 12px hsl(var(--neon-glow) / 0.35);
   }
 
-  .shadow-sidebar-item {
-    box-shadow: var(--sidebar-item-active-shadow);
+  .font-english {
+    font-family: 'Inter', 'Outfit', 'Cairo', sans-serif;
   }
 
-  .shadow-sidebar-subitem {
-    box-shadow: var(--sidebar-subitem-shadow);
+  .font-arabic {
+    font-family: 'Cairo', 'Amiri', 'Inter', sans-serif;
+    font-weight: 500;
+    font-feature-settings: 'kern' 1, 'liga' 1;
   }
 
-  .shadow-sidebar-glass {
-    box-shadow: var(--sidebar-glass-shadow);
+  .arabic-heading-lg {
+    font-size: clamp(2.15rem, 1.45rem + 2.6vw, 3.45rem);
+    line-height: 1.25;
+    letter-spacing: 0.03em;
   }
 
-  .shadow-sidebar-shell {
-    box-shadow: var(--sidebar-shell-shadow);
+  .arabic-subtitle {
+    font-size: clamp(1rem, 0.45vw + 0.95rem, 1.35rem);
+    line-height: 1.85;
   }
 
-  .shadow-header-glass {
-    box-shadow: var(--header-glass-shadow);
+  .arabic-body-text {
+    font-size: clamp(0.96rem, 0.35vw + 0.9rem, 1.18rem);
+    line-height: 1.8;
   }
 
-  .shadow-header-shell {
-    box-shadow: var(--header-shell-shadow);
-  }
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* TEXT GRADIENT UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-exclusive {
-    background: var(--gradient-exclusive);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-neon {
-    background: var(--gradient-neon);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-hero {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* GLASS MORPHISM UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .glass-sidebar {
-    background: hsl(var(--sidebar-glass-background));
-    border: 1px solid hsl(var(--sidebar-glass-border));
-    box-shadow: var(--sidebar-glass-shadow);
-    backdrop-filter: var(--sidebar-shell-blur);
-  }
-
-  .glass-header {
-    background: hsl(var(--header-glass-background));
-    border: 1px solid hsl(var(--header-glass-border));
-    box-shadow: var(--header-glass-shadow);
-    backdrop-filter: var(--header-shell-blur);
-  }
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* LEGAL ICON UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .legal-icon-24 {
-    stroke-width: var(--legal-icon-stroke-24);
-  }
-
-  .legal-icon-corner-inner {
-    border-radius: var(--legal-icon-corner-inner);
-  }
-
-  .legal-icon-corner-outer {
-    border-radius: var(--legal-icon-corner-outer);
-  }
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* SPACING UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .space-legal-xs {
-    gap: var(--spacing-xs);
-  }
-
-  .space-legal-sm {
-    gap: var(--spacing-sm);
-  }
-
-  .space-legal-md {
-    gap: var(--spacing-md);
-  }
-
-  .space-legal-lg {
-    gap: var(--spacing-lg);
-  }
-
-  .space-legal-xl {
-    gap: var(--spacing-xl);
-  }
-
-  .space-legal-2xl {
-    gap: var(--spacing-2xl);
-  }
-
-  .space-legal-3xl {
-    gap: var(--spacing-3xl);
+  .arabic-eyebrow {
+    font-size: clamp(0.7rem, 0.3vw + 0.65rem, 0.85rem);
+    letter-spacing: 0.18em;
   }
 }
+  

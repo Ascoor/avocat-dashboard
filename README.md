@@ -1,73 +1,46 @@
-# Welcome to your Lovable project
+# Frontend (React 18 + TypeScript)
 
-## Project info
+This package hosts the public landing page and dashboard shell UI built with Vite, Tailwind CSS, and shadcn/ui components. It consumes the Laravel API located at `../backend`.
 
-**URL**: https://lovable.dev/projects/c20da273-2934-4e80-8a44-893930d1f119
+## Project Structure
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/c20da273-2934-4e80-8a44-893930d1f119) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── api/        → Axios clients & domain-specific fetch hooks
+├── components/ → Reusable UI (shadcn) & layout primitives
+├── contexts/   → Global providers (theme, language, auth state)
+├── data/       → Static JSON manifests & seed data
+├── pages/      → Route-level components (Landing, Dashboard, Auth, etc.)
+├── utils/      → Cross-cutting helpers (smoothScroll, asset resolver, i18n helpers)
+└── assets/     → Images, branding, and hero slides
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Copy the example environment:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Update `VITE_API_URL` if your backend runs on a non-default host/port.
 
-**Use GitHub Codespaces**
+2. Install dependencies and bootstrap the dev server:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The app will be reachable at the URL printed by Vite (defaults to `http://localhost:5173`).
 
-## What technologies are used for this project?
+## Testing & Linting
 
-This project is built with:
+- `npm run lint` → ESLint (TypeScript + React rules)
+- `npm run test` → Vitest unit tests
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Branding & Themability
 
-## How can I deploy this project?
+The `BrandLogo` component reads logo assets from the backend settings API and gracefully falls back to the local PNG assets under `src/assets/brand`. Theme (dark/light) and language direction (RTL/LTR) are automatically respected.
 
-Simply open [Lovable](https://lovable.dev/projects/c20da273-2934-4e80-8a44-893930d1f119) and click on Share -> Publish.
+## Notes
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Dashboard demos & generated assets now live exclusively under `../scripts/`. Do **not** re-introduce copies into the frontend bundle.
+- When adding new API endpoints, keep shared typing contracts in `src/types/` to maintain consistency between the landing page and dashboard surfaces.
