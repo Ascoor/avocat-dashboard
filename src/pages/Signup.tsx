@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   AlertCircle,
   ArrowLeftRight,
@@ -16,11 +17,12 @@ import {
 
 import AuthLayout from '@/components/layout/AuthLayout';
 import type { AuthHighlight } from '@/components/layout/AuthLayout';
-import BrandLogo from '@/components/common/BrandLogo';
 import LanguageToggle from '@/components/ui/language-toggle';
+import ThemeToggle from '@/components/ui/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { toast } from '@/hooks/use-toast';
@@ -33,6 +35,7 @@ const Signup: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [loading, setLoading] = useState(false);
   const [mirrored, setMirrored] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
@@ -43,56 +46,59 @@ const Signup: React.FC = () => {
 
   useEffect(() => {
     if (!authLoading && isAuthenticated) {
-      navigate("/dashboard", { replace: true });
+      navigate('/dashboard', { replace: true });
     }
   }, [isAuthenticated, authLoading, navigate]);
 
   const heroCopy = useMemo(() => {
     if (isRTL) {
       return {
-        badge: 'انطلاقة مساحة عملك',
-        headline: 'ابدأ مركز تشغيلك القانوني الآمن',
-        subheadline:
-          'سجّل مكتبك، وادعُ الشركاء، ونظّم القضايا من منصة موحدة ومشفرة تدعم نموك.',
+        badge: 'انضم إلينا اليوم',
+        headline: 'ابدأ رحلتك مع بوابتك القانونية الآمنة',
+        subheadline: 'سجّل حسابك للوصول إلى خدماتنا القانونية المتميزة ومتابعة قضاياك بكل سهولة.',
         highlights: [
-          { icon: ShieldCheck, text: 'حماية بمستوى المؤسسات مع مراقبة امتثال مستمرة.' },
-          { icon: Sparkles, text: 'تهيئة موجهة وفق حجم مكتبك وتدفقات عملك.' },
-          { icon: UserPlus, text: 'حسابات تعاونية للشركاء والعملاء والمساعدين من اليوم الأول.' },
+          { icon: ShieldCheck, text: 'حماية بيانات مشفرة بأعلى المعايير الدولية' },
+          { icon: Sparkles, text: 'لوحة تحكم شخصية لمتابعة جميع قضاياك' },
+          { icon: UserPlus, text: 'تواصل مباشر مع فريقنا القانوني المتخصص' },
         ],
         stats: [
-          { value: '٣ دقائق', label: 'متوسط التسجيل' },
-          { value: '٢٤/٧', label: 'دعم تهيئة متخصص' },
+          { value: '٣ دقائق', label: 'للتسجيل' },
+          { value: 'مجاني', label: 'إنشاء الحساب' },
         ],
       };
     }
 
     return {
-      badge: 'Launch your workspace',
-      headline: 'Start your secure legal operations hub',
-      subheadline:
-        'Register your firm, invite partners, and orchestrate matters from a centralized, encrypted platform.',
+      badge: 'Join Us Today',
+      headline: 'Start Your Journey with Our Secure Legal Portal',
+      subheadline: 'Create your account to access our premium legal services and track your cases with ease.',
       highlights: [
-        { icon: ShieldCheck, text: 'Enterprise-grade security with continuous compliance monitoring.' },
-        { icon: Sparkles, text: 'Guided onboarding tailored to your practice size and workflows.' },
-        { icon: UserPlus, text: 'Collaborative accounts ready for partners, clients, and assistants.' },
+        { icon: ShieldCheck, text: 'Enterprise-grade encryption protecting your sensitive data' },
+        { icon: Sparkles, text: 'Personal dashboard to track all your cases' },
+        { icon: UserPlus, text: 'Direct communication with our specialized legal team' },
       ],
       stats: [
-        { value: '3 min', label: 'Average signup time' },
-        { value: '24/7', label: 'Specialist onboarding support' },
+        { value: '3 min', label: 'To Register' },
+        { value: 'Free', label: 'Account Creation' },
       ],
     };
   }, [isRTL]);
 
   const shouldReverse = useMemo(() => (isRTL ? !mirrored : mirrored), [isRTL, mirrored]);
 
-  const heroHighlights: AuthHighlight[] = heroCopy.highlights.map(({ icon, text }) => ({ icon, text }));
-
-  const heroStats = heroCopy.stats;
+  const heroHighlights: AuthHighlight[] = heroCopy.highlights.map(({ icon: Icon, text }) => ({
+    icon: <Icon className="w-5 h-5" />,
+    text,
+  }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setFormError(null);
+
+    if (!name.trim()) {
+      setFormError(t('auth.validation.required'));
+      return;
+    }
 
     if (password !== confirmPassword) {
       setFormError(t('auth.validation.password_mismatch'));
@@ -101,6 +107,11 @@ const Signup: React.FC = () => {
 
     if (password.length < 6) {
       setFormError(t('auth.validation.password_length'));
+      return;
+    }
+
+    if (!agreeToTerms) {
+      setFormError(language === 'ar' ? 'يرجى الموافقة على الشروط والأحكام' : 'Please agree to the terms and conditions');
       return;
     }
 
@@ -114,9 +125,11 @@ const Signup: React.FC = () => {
       });
       navigate('/dashboard');
     } catch (error) {
+      const message = error instanceof Error ? error.message : t('auth.signup.error_message');
+      setFormError(message);
       toast({
         title: t('common.error'),
-        description: error instanceof Error ? error.message : t('auth.signup.error_message'),
+        description: message,
         variant: 'destructive',
       });
     } finally {
@@ -124,46 +137,33 @@ const Signup: React.FC = () => {
     }
   };
 
-  const cardIcon = (
-    <div
-      className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl"
-      style={{
-        background: 'hsla(var(var(--primary)) / 0.12)',
-        color: 'hsl(var(var(--primary)))',
-      }}
-    >
-      <BrandLogo variant="icon" className="h-8 w-8" lang={language} />
-    </div>
-  );
-
   const toolbar = (
     <>
       <Button
         type="button"
         variant="outline"
         size="sm"
-        className="border-border/50 bg-background/70 text-xs font-medium backdrop-blur"
+        className="border-border/50 bg-background/70 text-xs font-medium backdrop-blur hidden sm:flex"
         onClick={() => setMirrored((prev) => !prev)}
         aria-pressed={mirrored}
         aria-label={t('auth.login.swap_layout_aria')}
       >
         <ArrowLeftRight className="h-4 w-4" />
-        <span>{t('auth.login.swap_layout')}</span>
+        <span className="ml-1">{t('auth.login.swap_layout')}</span>
       </Button>
+      <ThemeToggle tone="light" />
       <LanguageToggle />
     </>
   );
 
-  // Show loading state while checking auth
   if (authLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </div>
     );
   }
 
-  // Don't render signup page if authenticated (will redirect)
   if (isAuthenticated) {
     return null;
   }
@@ -175,42 +175,48 @@ const Signup: React.FC = () => {
       hero={{
         badge: (
           <>
-            <Sparkles className="h-4 w-4" style={{ color: 'hsl(var(var(--gold-light)))' }} />
+            <Sparkles className="h-4 w-4" />
             <span>{heroCopy.badge}</span>
           </>
         ),
         title: heroCopy.headline,
         description: heroCopy.subheadline,
         highlights: heroHighlights,
-        stats: heroStats,
+        stats: heroCopy.stats,
       }}
       card={{
-        icon: cardIcon,
+        icon: (
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+            <UserPlus className="h-6 w-6 text-primary" />
+          </div>
+        ),
         title: t('auth.signup.title'),
         description: t('auth.signup.subtitle'),
         content: (
-          <>
-            {formError ? (
-              <div
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm"
-                style={{
-                  color: 'hsl(var(var(--destructive)))',
-                  background: 'hsla(var(var(--destructive)) / 0.12)',
-                  border: '1px solid hsla(var(var(--destructive)) / 0.35)',
-                }}
+          <div className="space-y-5">
+            {/* Error Message */}
+            {formError && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm bg-destructive/10 border border-destructive/30 text-destructive"
               >
-                <AlertCircle className="h-4 w-4" />
+                <AlertCircle className="h-4 w-4 flex-shrink-0" />
                 <span>{formError}</span>
-              </div>
-            ) : null}
+              </motion.div>
+            )}
 
+            {/* Signup Form */}
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              {/* Name Field */}
               <div className="space-y-2">
-                <Label htmlFor="name">{t('auth.signup.name')}</Label>
+                <Label htmlFor="name" className="text-sm font-medium">
+                  {t('auth.signup.name')}
+                </Label>
                 <div className="relative">
                   <User
                     className={cn(
-                      'absolute top-3 h-4 w-4 text-muted-foreground',
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
                       isRTL ? 'right-3' : 'left-3'
                     )}
                   />
@@ -220,18 +226,22 @@ const Signup: React.FC = () => {
                     placeholder={t('auth.signup.name_placeholder')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className={cn(isRTL ? 'pr-10' : 'pl-10')}
+                    className={cn('h-11', isRTL ? 'pr-10' : 'pl-10')}
                     required
+                    autoComplete="name"
                   />
                 </div>
               </div>
 
+              {/* Email Field */}
               <div className="space-y-2">
-                <Label htmlFor="email">{t('auth.signup.email')}</Label>
+                <Label htmlFor="email" className="text-sm font-medium">
+                  {t('auth.signup.email')}
+                </Label>
                 <div className="relative">
                   <Mail
                     className={cn(
-                      'absolute top-3 h-4 w-4 text-muted-foreground',
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
                       isRTL ? 'right-3' : 'left-3'
                     )}
                   />
@@ -241,18 +251,22 @@ const Signup: React.FC = () => {
                     placeholder={t('auth.signup.email_placeholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className={cn(isRTL ? 'pr-10' : 'pl-10')}
+                    className={cn('h-11', isRTL ? 'pr-10' : 'pl-10')}
                     required
+                    autoComplete="email"
                   />
                 </div>
               </div>
 
+              {/* Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="password">{t('auth.signup.password')}</Label>
+                <Label htmlFor="password" className="text-sm font-medium">
+                  {t('auth.signup.password')}
+                </Label>
                 <div className="relative">
                   <Lock
                     className={cn(
-                      'absolute top-3 h-4 w-4 text-muted-foreground',
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
                       isRTL ? 'right-3' : 'left-3'
                     )}
                   />
@@ -262,22 +276,20 @@ const Signup: React.FC = () => {
                     placeholder={t('auth.signup.password_placeholder')}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className={cn(isRTL ? 'pl-12 pr-10' : 'pl-10 pr-12')}
+                    className={cn('h-11', isRTL ? 'pr-10 pl-12' : 'pl-10 pr-12')}
                     required
+                    minLength={6}
+                    autoComplete="new-password"
                   />
                   <Button
                     type="button"
                     variant="ghost"
                     size="sm"
                     className={cn(
-                      'absolute top-0 h-full px-3 py-2 hover:bg-transparent',
-                      isRTL ? 'left-0' : 'right-0'
+                      'absolute top-1/2 -translate-y-1/2 h-8 w-8 p-0',
+                      isRTL ? 'left-1' : 'right-1'
                     )}
                     onClick={() => setShowPassword((prev) => !prev)}
-                    aria-pressed={showPassword}
-                    aria-label={
-                      showPassword ? t('auth.login.hide_password') : t('auth.login.show_password')
-                    }
                   >
                     {showPassword ? (
                       <EyeOff className="h-4 w-4 text-muted-foreground" />
@@ -288,12 +300,15 @@ const Signup: React.FC = () => {
                 </div>
               </div>
 
+              {/* Confirm Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword">{t('auth.signup.confirm_password')}</Label>
+                <Label htmlFor="confirmPassword" className="text-sm font-medium">
+                  {t('auth.signup.confirm_password')}
+                </Label>
                 <div className="relative">
                   <Lock
                     className={cn(
-                      'absolute top-3 h-4 w-4 text-muted-foreground',
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
                       isRTL ? 'right-3' : 'left-3'
                     )}
                   />
@@ -303,24 +318,19 @@ const Signup: React.FC = () => {
                     placeholder={t('auth.signup.confirm_password_placeholder')}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className={cn(isRTL ? 'pl-12 pr-10' : 'pl-10 pr-12')}
+                    className={cn('h-11', isRTL ? 'pr-10 pl-12' : 'pl-10 pr-12')}
                     required
+                    autoComplete="new-password"
                   />
                   <Button
                     type="button"
                     variant="ghost"
                     size="sm"
                     className={cn(
-                      'absolute top-0 h-full px-3 py-2 hover:bg-transparent',
-                      isRTL ? 'left-0' : 'right-0'
+                      'absolute top-1/2 -translate-y-1/2 h-8 w-8 p-0',
+                      isRTL ? 'left-1' : 'right-1'
                     )}
                     onClick={() => setShowConfirmPassword((prev) => !prev)}
-                    aria-pressed={showConfirmPassword}
-                    aria-label={
-                      showConfirmPassword
-                        ? t('auth.login.hide_password')
-                        : t('auth.login.show_password')
-                    }
                   >
                     {showConfirmPassword ? (
                       <EyeOff className="h-4 w-4 text-muted-foreground" />
@@ -331,60 +341,109 @@ const Signup: React.FC = () => {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full glow-effect" disabled={loading}>
+              {/* Terms Agreement */}
+              <div className="flex items-start gap-2">
+                <Checkbox
+                  id="terms"
+                  checked={agreeToTerms}
+                  onCheckedChange={(checked) => setAgreeToTerms(checked === true)}
+                  className="mt-0.5"
+                />
+                <Label htmlFor="terms" className="text-xs text-muted-foreground cursor-pointer leading-relaxed">
+                  {language === 'ar' ? (
+                    <>
+                      أوافق على{' '}
+                      <Link to="/terms" className="text-primary hover:underline">
+                        الشروط والأحكام
+                      </Link>{' '}
+                      و{' '}
+                      <Link to="/privacy" className="text-primary hover:underline">
+                        سياسة الخصوصية
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      I agree to the{' '}
+                      <Link to="/terms" className="text-primary hover:underline">
+                        Terms of Service
+                      </Link>{' '}
+                      and{' '}
+                      <Link to="/privacy" className="text-primary hover:underline">
+                        Privacy Policy
+                      </Link>
+                    </>
+                  )}
+                </Label>
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="w-full h-11 font-semibold"
+                disabled={loading}
+              >
                 {loading ? (
                   <span className="flex items-center gap-2">
-                    <span className="h-4 w-4 animate-spin rounded-full border-b-2 border-white" />
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
                     {t('common.loading')}
                   </span>
                 ) : (
                   <>
                     {t('auth.signup.submit')}
-                    <ArrowRight className={`ml-2 h-4 w-4 ${isRTL ? 'rotate-180' : ''}`} />
+                    <ArrowRight className={cn('ml-2 h-4 w-4', isRTL && 'rotate-180')} />
                   </>
                 )}
               </Button>
             </form>
 
-            <div className="space-y-2 text-center text-sm text-[hsl(var(var(--slate-light)))]">
-              <p>
+            {/* Divider */}
+            <div className="relative my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">
+                  {language === 'ar' ? 'أو' : 'or'}
+                </span>
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="space-y-3 text-center text-sm">
+              <p className="text-muted-foreground">
                 {t('auth.signup.have_account')}{' '}
                 <Link to="/login" className="font-medium text-primary hover:underline">
                   {t('auth.login.submit')}
                 </Link>
               </p>
               <p>
-                <Link to="/" className="font-medium text-primary hover:underline">
-                  {t('auth.signup.back_to_home')}
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {language === 'ar' ? '← العودة للصفحة الرئيسية' : '← Back to home'}
                 </Link>
               </p>
             </div>
 
-            <div
-              className={cn(
-                'flex items-center gap-3 rounded-2xl border border-dashed p-4 backdrop-blur',
-                isRTL ? 'flex-row-reverse text-right' : 'text-left'
-              )}
-              style={{
-                borderColor: 'hsla(var(var(--primary)) / 0.4)',
-                background: 'hsla(var(var(--primary)) / 0.05)',
-              }}
-            >
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-xl"
-                style={{
-                  background: 'hsla(var(var(--primary)) / 0.12)',
-                  color: 'hsl(var(var(--primary)))',
-                }}
-              >
-                <ShieldCheck className="h-6 w-6" />
+            {/* Security Notice */}
+            <div className={cn(
+              'flex items-center gap-3 rounded-xl border border-dashed border-primary/30 bg-primary/5 p-3 mt-4',
+              isRTL ? 'flex-row-reverse text-right' : ''
+            )}>
+              <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
-              <div className="space-y-1 text-xs sm:text-sm">
-                <p className="font-semibold text-[hsl(var(var(--foreground)))]">{t('auth.signup.security_title')}</p>
-                <p className="text-[hsl(var(var(--slate-light)))]">{t('auth.signup.security_description')}</p>
+              <div className="text-xs space-y-0.5">
+                <p className="font-semibold text-foreground">
+                  {language === 'ar' ? 'بياناتك في أمان' : 'Your Data is Safe'}
+                </p>
+                <p className="text-muted-foreground">
+                  {language === 'ar'
+                    ? 'نستخدم أحدث تقنيات التشفير لحماية بياناتك'
+                    : 'We use the latest encryption to protect your data'
+                  }
+                </p>
               </div>
             </div>
-          </>
+          </div>
         ),
       }}
     />

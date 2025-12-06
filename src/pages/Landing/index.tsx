@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import LandingNavbar from "./LandingNavbar";
-import HeroCarousel from "./HeroCarousel";
+import Hero from "./Hero";
 import About from "./About";
+import PracticeAreas from "./PracticeAreas";
 import Services from "./Services";
 import Capabilities from "./Capabilities";
-import Features from "./Features";
 import Achievements from "./Achievements";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
-import Insights from "./Insights";
+import FAQ from "./FAQ";
 import CallToAction from "./CallToAction";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -31,7 +31,7 @@ const LandingPage: React.FC = () => {
   // Show loading state while checking auth
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </div>
     );
@@ -43,18 +43,19 @@ const LandingPage: React.FC = () => {
   }
  
   return (
-    <div className="flex min-h-screen flex-col" dir={direction}>
+    <div className="flex min-h-screen flex-col bg-background" dir={direction}>
       <LandingNavbar />
 
-      <main className="flex flex-1 flex-col ">
-        <HeroCarousel />
+      <main className="flex flex-1 flex-col">
+        <Hero />
         <About />
+        <PracticeAreas />
         <Services />
         <Capabilities /> 
         <Achievements />
-        <Testimonials />
         <Team />
-        <Insights />
+        <Testimonials />
+        <FAQ />
         <CallToAction />
         <Contact />
       </main>

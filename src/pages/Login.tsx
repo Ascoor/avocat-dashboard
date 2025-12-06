@@ -1,299 +1,371 @@
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import React, { useEffect, useMemo, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+  AlertCircle,
+  ArrowLeftRight,
+  ArrowRight,
+  CheckCircle,
+  Eye,
+  EyeOff,
+  Lock,
+  Mail,
+  ShieldCheck,
+  Sparkles,
+  UserCheck,
+  Users,
+} from 'lucide-react';
 
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useAuth } from "@/contexts/AuthContext";
-import { useToast } from "@/hooks/use-toast";
-
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { AlertCircle, Scale, Shield, Sparkles, UserCheck } from "lucide-react";
-import BrandLogo from "@/components/common/BrandLogo";
-
-const emailRegex = /\S+@\S+\.\S+/;
-
-type AuthTab = "signin" | "signup";
-
-type SigninFormState = {
-  email: string;
-  password: string;
-};
-
-type SignupFormState = {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+import AuthLayout from '@/components/layout/AuthLayout';
+import type { AuthHighlight } from '@/components/layout/AuthLayout';
+import LanguageToggle from '@/components/ui/language-toggle';
+import ThemeToggle from '@/components/ui/theme-toggle';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import { useAuth } from '@/contexts/AuthContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { toast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 
 const Login: React.FC = () => {
-  const { t } = useTranslation();
-  const { isRTL, language } = useLanguage();
-  const { login, signup, loading, user, isAuthenticated } = useAuth();
-  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [mirrored, setMirrored] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const { login, isAuthenticated, loading: authLoading } = useAuth();
+  const { t, isRTL, language } = useLanguage();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
-  const [activeTab, setActiveTab] = useState<AuthTab>("signin");
-  const [signinForm, setSigninForm] = useState<SigninFormState>({ email: "", password: "" });
-  const [signupForm, setSignupForm] = useState<SignupFormState>({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [formError, setFormError] = useState<string | null>(null);
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [isAuthenticated, authLoading, navigate]);
 
   useEffect(() => {
-    if (user && isAuthenticated) {
-      navigate("/dashboard", { replace: true });
+    if (searchParams.get('registered') === '1') {
+      toast({ title: t('common.success'), description: t('auth.login.after_register') });
     }
-  }, [user, isAuthenticated, navigate]);
-
-  useEffect(() => {
-    if (searchParams.get("registered") === "1") {
-      toast({ title: t("common.success"), description: t("auth.login.after_register") });
+    if (searchParams.get('session') === 'expired') {
+      toast({ title: t('common.info'), description: t('auth.session_expired') });
     }
-    if (searchParams.get("session") === "expired") {
-      toast({ title: t("common.info"), description: t("auth.session_expired") });
+  }, [searchParams, t]);
+
+  const heroCopy = useMemo(() => {
+    if (isRTL) {
+      return {
+        badge: 'بوابة العملاء الآمنة',
+        headline: 'مرحباً بعودتك إلى بوابتك القانونية',
+        subheadline: 'ادخل إلى لوحة التحكم لمتابعة قضاياك والتواصل مع فريقنا القانوني المتخصص.',
+        highlights: [
+          { icon: ShieldCheck, text: 'حماية بيانات مشفرة بأعلى المعايير الدولية' },
+          { icon: Users, text: 'تواصل مباشر مع المحامين والمستشارين' },
+          { icon: CheckCircle, text: 'متابعة لحظية لتطورات القضايا والجلسات' },
+        ],
+        stats: [
+          { value: '٢٤/٧', label: 'دعم متواصل' },
+          { value: '+٥٠٠', label: 'عميل نشط' },
+        ],
+      };
     }
-  }, [searchParams, toast, t]);
 
-  const validateEmail = (email: string) => emailRegex.test(email.trim());
+    return {
+      badge: 'Secure Client Portal',
+      headline: 'Welcome Back to Your Legal Hub',
+      subheadline: 'Access your dashboard to track cases, communicate with our legal team, and manage your matters.',
+      highlights: [
+        { icon: ShieldCheck, text: 'Enterprise-grade encryption protecting your sensitive data' },
+        { icon: Users, text: 'Direct communication with attorneys and legal advisors' },
+        { icon: CheckCircle, text: 'Real-time updates on case progress and court sessions' },
+      ],
+      stats: [
+        { value: '24/7', label: 'Support Available' },
+        { value: '500+', label: 'Active Clients' },
+      ],
+    };
+  }, [isRTL]);
 
-  const handleSignIn = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const shouldReverse = useMemo(() => (isRTL ? !mirrored : mirrored), [isRTL, mirrored]);
+
+  const heroHighlights: AuthHighlight[] = heroCopy.highlights.map(({ icon: Icon, text }) => ({
+    icon: <Icon className="w-5 h-5" />,
+    text,
+  }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setFormError(null);
 
-    if (!signinForm.email.trim() || !signinForm.password.trim()) {
-      setFormError(t("auth.validation.required"));
+    if (!email.trim() || !password.trim()) {
+      setFormError(t('auth.validation.required'));
       return;
     }
 
-    if (!validateEmail(signinForm.email)) {
-      setFormError(t("auth.validation.email_invalid"));
-      return;
-    }
+    setLoading(true);
 
     try {
-      await login(signinForm.email.trim(), signinForm.password.trim());
-      toast({ title: t("common.success"), description: t("auth.login.success") });
-      const nextUrl = searchParams.get("next") || "/dashboard";
+      await login(email, password);
+      toast({
+        title: t('auth.login.success_title') || t('common.success'),
+        description: t('auth.login.success'),
+      });
+      const nextUrl = searchParams.get('next') || '/dashboard';
       navigate(nextUrl, { replace: true });
-    } catch (err) {
-      const description =
-        (err as { message?: string })?.message ||
-        t("auth.errors.invalid_credentials") ||
-        t("auth.login.error");
-      setFormError(description);
-      toast({ title: t("common.error"), description, variant: "destructive" });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : t('auth.login.error');
+      setFormError(message);
+      toast({
+        title: t('common.error'),
+        description: message,
+        variant: 'destructive',
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleSignUp = async (event: React.FormEvent) => {
-    event.preventDefault();
-    setFormError(null);
+  const toolbar = (
+    <>
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        className="border-border/50 bg-background/70 text-xs font-medium backdrop-blur hidden sm:flex"
+        onClick={() => setMirrored((prev) => !prev)}
+        aria-pressed={mirrored}
+        aria-label={t('auth.login.swap_layout_aria')}
+      >
+        <ArrowLeftRight className="h-4 w-4" />
+        <span className="ml-1">{t('auth.login.swap_layout')}</span>
+      </Button>
+      <ThemeToggle tone="light" />
+      <LanguageToggle />
+    </>
+  );
 
-    if (!signupForm.name.trim()) {
-      setFormError(t("auth.validation.required"));
-      return;
-    }
+  if (authLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+      </div>
+    );
+  }
 
-    if (!validateEmail(signupForm.email)) {
-      setFormError(t("auth.validation.email_invalid"));
-      return;
-    }
-
-    if (!signupForm.password.trim() || signupForm.password.length < 6) {
-      setFormError(t("auth.validation.password_length"));
-      return;
-    }
-
-    if (signupForm.password !== signupForm.confirmPassword) {
-      setFormError(t("auth.validation.password_mismatch"));
-      return;
-    }
-
-    try {
-      await signup(signupForm.email.trim(), signupForm.password.trim(), signupForm.name.trim());
-      toast({ title: t("common.success"), description: t("auth.signup.success_message") });
-      navigate("/dashboard", { replace: true });
-    } catch (err) {
-      const description =
-        (err as { message?: string })?.message ||
-        t("auth.signup.error_message") ||
-        t("common.error");
-      setFormError(description);
-      toast({ title: t("common.error"), description, variant: "destructive" });
-    }
-  };
-
-  const disableSigninButton =
-    loading || !signinForm.email.trim() || !signinForm.password.trim();
-  const disableSignupButton =
-    loading ||
-    !signupForm.name.trim() ||
-    !signupForm.email.trim() ||
-    !signupForm.password.trim() ||
-    !signupForm.confirmPassword.trim();
+  if (isAuthenticated) {
+    return null;
+  }
 
   return (
-    <div
-      className="relative min-h-screen bg-[radial-gradient(circle_at_top,hsl(var(var(--primary))/0.12),transparent_60%)]"
-      dir={isRTL ? "rtl" : "ltr"}
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(130deg,hsl(var(var(--background)))_20%,hsl(var(var(--secondary)))_100%)]" />
-      <div className="absolute inset-0" style={{ backgroundImage: "var(var(--gradient-subtle))" }} />
-
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
-        <div className="w-full max-w-lg space-y-8">
-
-          <div className="rounded-3xl border border-[hsl(var(var(--border)))] bg-[hsl(var(var(--card)))]/95 p-8 shadow-[var(var(--shadow-card))] backdrop-blur">
-            <div className="flex flex-col items-center text-center">
-          <div className="text-center">
-<BrandLogo variant="icon" className="h-24"/>
+    <AuthLayout
+      heroSide={shouldReverse ? 'right' : 'left'}
+      toolbar={toolbar}
+      hero={{
+        badge: (
+          <>
+            <Sparkles className="h-4 w-4" />
+            <span>{heroCopy.badge}</span>
+          </>
+        ),
+        title: heroCopy.headline,
+        description: heroCopy.subheadline,
+        highlights: heroHighlights,
+        stats: heroCopy.stats,
+      }}
+      card={{
+        icon: (
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+            <UserCheck className="h-6 w-6 text-primary" />
           </div>
- 
-<BrandLogo variant="text" className="h-16"/>
- 
-              <p className="mt-2 text-sm text-[hsl(var(var(--slate-light)))]">
-                {activeTab === "signin" ? t("auth.login.subtitle") : t("auth.signup.subtitle")}
+        ),
+        title: t('auth.login.title'),
+        description: t('auth.login.subtitle'),
+        content: (
+          <div className="space-y-5">
+            {/* Error Message */}
+            {formError && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm bg-destructive/10 border border-destructive/30 text-destructive"
+              >
+                <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                <span>{formError}</span>
+              </motion.div>
+            )}
+
+            {/* Login Form */}
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              {/* Email Field */}
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-medium">
+                  {t('auth.login.email')}
+                </Label>
+                <div className="relative">
+                  <Mail
+                    className={cn(
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
+                      isRTL ? 'right-3' : 'left-3'
+                    )}
+                  />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder={t('auth.login.email_placeholder')}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className={cn(
+                      'h-11',
+                      isRTL ? 'pr-10' : 'pl-10'
+                    )}
+                    required
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+
+              {/* Password Field */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password" className="text-sm font-medium">
+                    {t('auth.login.password')}
+                  </Label>
+                  <Link
+                    to="/forgot-password"
+                    className="text-xs text-primary hover:underline"
+                  >
+                    {t('auth.login.forgot_password')}
+                  </Link>
+                </div>
+                <div className="relative">
+                  <Lock
+                    className={cn(
+                      'absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground',
+                      isRTL ? 'right-3' : 'left-3'
+                    )}
+                  />
+                  <Input
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder={t('auth.login.password_placeholder')}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className={cn(
+                      'h-11',
+                      isRTL ? 'pr-10 pl-12' : 'pl-10 pr-12'
+                    )}
+                    required
+                    autoComplete="current-password"
+                  />
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      'absolute top-1/2 -translate-y-1/2 h-8 w-8 p-0',
+                      isRTL ? 'left-1' : 'right-1'
+                    )}
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    aria-label={showPassword ? t('auth.login.hide_password') : t('auth.login.show_password')}
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4 text-muted-foreground" />
+                    ) : (
+                      <Eye className="h-4 w-4 text-muted-foreground" />
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Remember Me */}
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id="remember"
+                  checked={rememberMe}
+                  onCheckedChange={(checked) => setRememberMe(checked === true)}
+                />
+                <Label htmlFor="remember" className="text-sm text-muted-foreground cursor-pointer">
+                  {language === 'ar' ? 'تذكرني' : 'Remember me'}
+                </Label>
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="w-full h-11 font-semibold"
+                disabled={loading}
+              >
+                {loading ? (
+                  <span className="flex items-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
+                    {t('common.loading')}
+                  </span>
+                ) : (
+                  <>
+                    {t('auth.login.submit')}
+                    <ArrowRight className={cn('ml-2 h-4 w-4', isRTL && 'rotate-180')} />
+                  </>
+                )}
+              </Button>
+            </form>
+
+            {/* Divider */}
+            <div className="relative my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">
+                  {language === 'ar' ? 'أو' : 'or'}
+                </span>
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="space-y-3 text-center text-sm">
+              <p className="text-muted-foreground">
+                {t('auth.login.no_account')}{' '}
+                <Link to="/signup" className="font-medium text-primary hover:underline">
+                  {t('auth.signup.submit')}
+                </Link>
+              </p>
+              <p>
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {language === 'ar' ? '← العودة للصفحة الرئيسية' : '← Back to home'}
+                </Link>
               </p>
             </div>
 
-            {formError ? (
-              <div className="mt-6 flex items-center gap-2 rounded-lg border border-[hsl(var(var(--destructive)))]/40 bg-[hsl(var(var(--destructive)))]/10 px-3 py-2 text-sm text-[hsl(var(var(--destructive)))]">
-                <AlertCircle className="h-4 w-4" />
-                <span>{formError}</span>
+            {/* Security Notice */}
+            <div className={cn(
+              'flex items-center gap-3 rounded-xl border border-dashed border-primary/30 bg-primary/5 p-3 mt-4',
+              isRTL ? 'flex-row-reverse text-right' : ''
+            )}>
+              <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
-            ) : null}
-
-            <Tabs
-              value={activeTab}
-              onValueChange={(value) => setActiveTab(value as AuthTab)}
-              className="mt-6 w-full"
-            >
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="signin" className="flex items-center gap-2">
-                  <UserCheck className="h-4 w-4" />
-                  {language === "ar" ? "تسجيل الدخول" : "Sign In"}
-                </TabsTrigger>
-                <TabsTrigger value="signup" className="flex items-center gap-2">
-                  <Shield className="h-4 w-4" />
-                  {language === "ar" ? "إنشاء حساب" : "Sign Up"}
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="signin" className="mt-6">
-                <form onSubmit={handleSignIn} className="space-y-4" noValidate>
-                  <div className="space-y-2">
-                    <Label htmlFor="signin-email">{t("auth.login.email")}</Label>
-                    <Input
-                      id="signin-email"
-                      type="email"
-                      value={signinForm.email}
-                      onChange={(event) =>
-                        setSigninForm((prev) => ({ ...prev, email: event.target.value }))
-                      }
-                      placeholder={t("auth.login.email_placeholder")}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signin-password">{t("auth.login.password")}</Label>
-                    <Input
-                      id="signin-password"
-                      type="password"
-                      value={signinForm.password}
-                      onChange={(event) =>
-                        setSigninForm((prev) => ({ ...prev, password: event.target.value }))
-                      }
-                      placeholder={t("auth.login.password_placeholder")}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" disabled={disableSigninButton}>
-                    {loading ? t("common.loading") : t("auth.login.submit")}
-                  </Button>
-                </form>
-              </TabsContent>
-
-              <TabsContent value="signup" className="mt-6">
-                <form onSubmit={handleSignUp} className="space-y-4" noValidate>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-name">{t("auth.signup.name")}</Label>
-                    <Input
-                      id="signup-name"
-                      type="text"
-                      value={signupForm.name}
-                      onChange={(event) =>
-                        setSignupForm((prev) => ({ ...prev, name: event.target.value }))
-                      }
-                      placeholder={t("auth.signup.name_placeholder")}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-email">{t("auth.signup.email")}</Label>
-                    <Input
-                      id="signup-email"
-                      type="email"
-                      value={signupForm.email}
-                      onChange={(event) =>
-                        setSignupForm((prev) => ({ ...prev, email: event.target.value }))
-                      }
-                      placeholder={t("auth.signup.email_placeholder")}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-password">{t("auth.signup.password")}</Label>
-                    <Input
-                      id="signup-password"
-                      type="password"
-                      value={signupForm.password}
-                      onChange={(event) =>
-                        setSignupForm((prev) => ({ ...prev, password: event.target.value }))
-                      }
-                      placeholder={t("auth.signup.password_placeholder")}
-                      required
-                      minLength={6}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-confirm">{t("auth.signup.confirm_password")}</Label>
-                    <Input
-                      id="signup-confirm"
-                      type="password"
-                      value={signupForm.confirmPassword}
-                      onChange={(event) =>
-                        setSignupForm((prev) => ({ ...prev, confirmPassword: event.target.value }))
-                      }
-                      placeholder={t("auth.signup.confirm_password_placeholder")}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" disabled={disableSignupButton}>
-                    {loading ? t("common.loading") : t("auth.signup.submit")}
-                  </Button>
-                </form>
-              </TabsContent>
-            </Tabs>
-
-            <div className="mt-8 text-center text-sm text-[hsl(var(var(--slate-light)))]">
- 
-              <Link to="/" className="mt-3 inline-block transition-colors hover:text-[hsl(var(var(--primary)))]">
-                {language === "ar" ? "← العودة إلى الصفحة الرئيسية" : "← Back to home"}
-              </Link>
+              <div className="text-xs space-y-0.5">
+                <p className="font-semibold text-foreground">
+                  {language === 'ar' ? 'بوابة آمنة' : 'Secure Portal'}
+                </p>
+                <p className="text-muted-foreground">
+                  {language === 'ar' 
+                    ? 'بياناتك محمية بتشفير SSL 256-bit'
+                    : 'Your data is protected with 256-bit SSL encryption'
+                  }
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        ),
+      }}
+    />
   );
 };
 
