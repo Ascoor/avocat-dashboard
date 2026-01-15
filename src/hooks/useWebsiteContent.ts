@@ -10,11 +10,11 @@ export interface UseWebsiteContentResult {
   error: Error | null;
   contentBlocks: ContentBlock[];
   getLocalizedValue: <T>(key: string, fallback?: Localized<T>) => Localized<T | null>;
-  getValueForLocale: <T>(
+  getValueForLocale: (
     key: string,
     locale: Locale,
-    fallback?: T | null
-  ) => T | null;
+    fallback?: string
+  ) => string;
 }
 
 export function useWebsiteContent(slug: string): UseWebsiteContentResult {
@@ -42,7 +42,7 @@ export function useWebsiteContent(slug: string): UseWebsiteContentResult {
   const getLocalizedValue = useCallback(
     <T,>(key: string, fallback?: Localized<T>): Localized<T | null> => {
       const block = getBlock(key);
-      const value = (block?.value ?? {}) as Localized<T | null>;
+      const value = block?.value as Localized<T | null> | undefined;
 
       return {
         ar: value?.ar ?? fallback?.ar ?? null,
@@ -53,13 +53,12 @@ export function useWebsiteContent(slug: string): UseWebsiteContentResult {
   );
 
   const getValueForLocale = useCallback(
-    <T,>(key: string, locale: Locale, fallback: T | null = null): T | null => {
-      const localized = getLocalizedValue<T>(key);
-      const value = localized[locale];
-
-      return (value ?? fallback ?? null) as T | null;
+    (key: string, locale: Locale, fallback: string = ''): string => {
+      const block = getBlock(key);
+      const value = block?.value as Localized<string> | undefined;
+      return value?.[locale] ?? fallback;
     },
-    [getLocalizedValue]
+    [getBlock]
   );
 
   return {

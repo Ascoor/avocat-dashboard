@@ -13,11 +13,11 @@ const Insights: React.FC = () => {
   const locale = language as Locale;
   const isArabic = language === "ar";
   const { getValueForLocale } = useWebsiteContent('articles');
-  const { data: articlesRaw } = useWebsiteCollection<ArticleApi | { data: ArticleApi[] }>("/api/website/articles");
+  const { data: articlesRaw } = useWebsiteCollection<ArticleApi>("/api/website/articles");
 
-  const articlesData = useMemo(() => {
+  const articlesData = useMemo<ArticleApi[]>(() => {
     if (Array.isArray(articlesRaw)) {
-      return articlesRaw;
+      return articlesRaw as ArticleApi[];
     }
 
     const nested = (articlesRaw as { data?: ArticleApi[] } | null)?.data;

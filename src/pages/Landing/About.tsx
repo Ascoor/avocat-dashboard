@@ -29,7 +29,7 @@ const About: React.FC = () => {
 
   const getString = useCallback(
     (key: string, lang: Locale = locale, fallback = ''): string =>
-      getValueForLocale<string>(key, lang) ?? fallback,
+      getValueForLocale(key, lang, fallback),
     [getValueForLocale, locale]
   );
 

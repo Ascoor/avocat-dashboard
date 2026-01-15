@@ -14,7 +14,7 @@ const CallToAction: React.FC = () => {
   const { getLocalizedValue, getValueForLocale } = useWebsiteContent('cta');
 
   const getString = useCallback(
-    (key: string, fallback = ''): string => getValueForLocale<string>(key, locale) ?? fallback,
+    (key: string, fallback = ''): string => getValueForLocale(key, locale, fallback),
     [getValueForLocale, locale]
   );
 
