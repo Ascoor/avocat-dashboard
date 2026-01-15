@@ -86,7 +86,7 @@ const AdsSection = ({ caseId, onChanged }: AdsSectionProps) => {
         subtitle={t('legalCaseDetails.ads.subtitle')}
         open={sectionOpen}
         onOpenChange={setSectionOpen}
-        toggleLabel={sectionOpen ? t('common.collapse') : t('common.expand')}
+        
         actions={
           <Button onClick={openCreateModal} className="self-start sm:self-auto">
             {t('legalCaseDetails.ads.addButton')}

@@ -23,7 +23,7 @@ export const useClients = () => {
 export const useDeleteClient = () => {
   const queryClient = useQueryClient();
 
-  const { mutate, isLoading, isError, error } = useMutation<void, Error, string>({
+  const { mutate, isPending, isError, error } = useMutation<void, Error, string>({
     mutationFn: async (clientId: string) => {
       await deleteClient(clientId);
     },
@@ -37,7 +37,7 @@ export const useDeleteClient = () => {
 
   return {
     deleteClient: mutate,
-    isLoading,
+    isLoading: isPending,
     isError,
     error,
   };

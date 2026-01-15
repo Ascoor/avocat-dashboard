@@ -32,7 +32,7 @@ const DashboardActivityItem: FC<Props> = ({
     <div className="flex-1 space-y-1">
       <div className="flex justify-between">
         <h4 className="font-semibold">{title}</h4>
-        <Badge variant={getActivityStatusVariant(status)}>
+        <Badge variant={getActivityStatusVariant(status) as "default" | "secondary" | "destructive" | "outline" | "success" | "warning" | "info" | "pending"}>
           {getActivityStatusLabel(status)}
         </Badge>
       </div>

@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 import MobileDrawer from "./MobileDrawer";
 import { Header } from "./Header";
 import { useLanguage } from "@/contexts/LanguageContext";

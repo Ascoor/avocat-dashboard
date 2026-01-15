@@ -4,7 +4,7 @@ import { type ReactNode, useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
-interface CaseSectionProps {
+export interface CaseSectionProps {
   icon: LucideIcon;
   title: string;
   subtitle?: string;
@@ -14,6 +14,7 @@ interface CaseSectionProps {
   contentClassName?: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  toggleLabel?: string;
 }
 
 const CaseSection = ({

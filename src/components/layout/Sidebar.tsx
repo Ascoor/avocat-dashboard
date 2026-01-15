@@ -33,11 +33,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-
-interface SidebarProps {
-  isOpen: boolean;
-  onToggle: () => void;
-}
+import { useSidebar } from '@/contexts/SidebarContext';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -52,9 +48,12 @@ interface MenuGroup {
   items: MenuItem[];
 }
 
-export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
+export const Sidebar = () => {
   const { t, direction } = useLanguage();
+  const { isCollapsed, toggleCollapsed } = useSidebar();
   const [openGroups, setOpenGroups] = useState<string[]>(['services', 'system']);
+
+  const isOpen = !isCollapsed;
 
   const toggleGroup = (groupId: string) => {
     setOpenGroups(prev => 
@@ -203,7 +202,7 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onToggle}
+            onClick={toggleCollapsed}
             className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden"
           />
         )}
@@ -229,7 +228,7 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={onToggle}
+              onClick={toggleCollapsed}
               className="h-8 w-8 text-sidebar-foreground hover:bg-sidebar-accent"
             >
               {direction === 'rtl' ? (
@@ -352,3 +351,5 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
     </>
   );
 };
+
+export default Sidebar;

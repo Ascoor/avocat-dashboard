@@ -9,14 +9,22 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-      default:
+        default:
           "bg-gradient-to-b from-primary/95 to-primary-glow text-primary-foreground shadow-[0_4px_10px_-2px_hsl(var(--primary-glow)/0.4),0_1px_3px_hsl(var(--primary)/0.4)] hover:shadow-[0_8px_20px_-4px_hsl(var(--primary-glow)/0.45)] hover:scale-[1.02]",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground",
+        link:
+          "text-primary underline-offset-4 hover:underline",
         accent:
           "bg-gradient-to-b from-accent-foreground/90 to-accent text-accent-foreground shadow-[0_4px_10px_-2px_hsl(var(--accent)/0.4)] hover:shadow-[0_8px_20px_-4px_hsl(var(--accent)/0.45)] hover:scale-[1.02]",
         gold:
           "bg-gradient-to-b from-[hsl(var(--gold)/1)] to-[hsl(var(--gold-muted)/1)] text-[hsl(var(--foreground)/1)] shadow-[0_4px_15px_-4px_hsl(var(--gold)/0.4)] hover:shadow-[0_8px_25px_-6px_hsl(var(--gold)/0.5)] hover:scale-[1.03] after:absolute after:inset-0 after:rounded-xl after:bg-[radial-gradient(circle_at_30%_30%,hsl(45_100%_70%_/_0.4),transparent_60%)] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500",
         premium:
-          "bg-gradient-to-r from-[hsl(45_100%_55%)] via-[hsl(45_90%_50%)] to-[hsl(45_100%_60%)] text-[hsl(var(--foreground)/1)] shadow-[0_6px_16px_-4px_hsl(45_100%_55%_/_0.4)] hover:shadow-[0_10px_30px_-8px_hsl(45_100%_60%_/_0.5)] hover:scale-[1.04] relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-transparent before:to-transparent before:translate-x-[-120%] hover:before:translate-x-[120%] before:transition-transform before:duration-&lsqb;800ms&rsqb; before:ease-out",
+          "bg-gradient-to-r from-[hsl(45_100%_55%)] via-[hsl(45_90%_50%)] to-[hsl(45_100%_60%)] text-[hsl(var(--foreground)/1)] shadow-[0_6px_16px_-4px_hsl(45_100%_55%_/_0.4)] hover:shadow-[0_10px_30px_-8px_hsl(45_100%_60%_/_0.5)] hover:scale-[1.04] relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-transparent before:to-transparent before:translate-x-[-120%] hover:before:translate-x-[120%] before:transition-transform before:duration-[800ms] before:ease-out",
         glass:
           "backdrop-blur-md bg-white/10 border border-white/15 text-white shadow-[0_4px_16px_-6px_rgba(255,255,255,0.3)] hover:bg-white/15 hover:shadow-[0_8px_24px_-6px_rgba(255,255,255,0.3)] hover:scale-[1.02] transition-[background,box-shadow,transform]",
         chromatic:
