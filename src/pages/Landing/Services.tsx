@@ -22,7 +22,7 @@ const Services: React.FC = () => {
   const { loading, contentBlocks, getLocalizedValue, getValueForLocale } = useWebsiteContent('services');
 
   const getString = useCallback(
-    (key: string, fallback = ''): string => getValueForLocale<string>(key, locale) ?? fallback,
+    (key: string, fallback = ''): string => getValueForLocale(key, locale, fallback),
     [getValueForLocale, locale]
   );
 

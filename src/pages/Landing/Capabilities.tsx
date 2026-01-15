@@ -20,7 +20,7 @@ import type { ContentBlock, Locale } from '@/types/website';
 
       const getString = useCallback(
         (key: string, fallback = ''): string =>
-          getValueForLocale<string>(key, locale) ?? fallback,
+          getValueForLocale(key, locale, fallback),
         [getValueForLocale, locale]
       );
 
