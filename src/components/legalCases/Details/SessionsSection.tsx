@@ -87,7 +87,7 @@ const SessionsSection = ({ caseId, onChanged }: SessionsSectionProps) => {
         subtitle={t('legalCaseDetails.sessions.subtitle')}
         open={sectionOpen}
         onOpenChange={setSectionOpen}
-        toggleLabel={sectionOpen ? t('common.collapse') : t('common.expand')}
+        
       >
         {loading ? (
           <div className="py-8 text-center text-muted-foreground">

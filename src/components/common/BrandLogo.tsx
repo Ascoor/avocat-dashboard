@@ -83,17 +83,17 @@ const BrandLogo: React.FC<BrandLogoProps> = ({
 
   const getSrc = (): string => {
     if (variant === 'icon') {
-      const remote = resolveRemoteVariant(remoteIcons?.[currentLang]);
+      const remote = resolveRemoteVariant(remoteIcons?.[currentLang] ?? undefined);
       return remote ?? (isDark ? fallbackLogos.icon.dark : fallbackLogos.icon.light);
     }
 
     if (variant === 'text') {
-      const remote = resolveRemoteVariant(remoteText?.[currentLang]);
+      const remote = resolveRemoteVariant(remoteText?.[currentLang] ?? undefined);
       const fallback = fallbackLogos.text[currentLang][mode];
       return remote ?? fallback;
     }
 
-    const remoteFullLogo = resolveRemoteVariant(remoteFull?.[currentLang]);
+    const remoteFullLogo = resolveRemoteVariant(remoteFull?.[currentLang] ?? undefined);
   const remoteSiteLogo = resolveAssetUrl(remoteSite?.[currentLang] ?? remoteSite?.en ?? undefined);
     const fallback = fallbackLogos.full[currentLang][mode];
     return remoteFullLogo ?? remoteSiteLogo ?? fallback;

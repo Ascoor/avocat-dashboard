@@ -86,7 +86,7 @@ const ProceduresSection = ({ caseId, onChanged }: ProceduresSectionProps) => {
         subtitle={t('legalCaseDetails.procedures.subtitle')}
         open={sectionOpen}
         onOpenChange={setSectionOpen}
-        toggleLabel={sectionOpen ? t('common.collapse') : t('common.expand')}
+        
         actions={
           <Button onClick={openCreateModal} className="self-start sm:self-auto">
             {t('legalCaseDetails.procedures.addButton')}

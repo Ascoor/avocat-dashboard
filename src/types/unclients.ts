@@ -7,7 +7,7 @@ export interface Unclient {
   address?: string;
   work?: string;
   emergency_number?: string;
-  date_of_birth: string;
+  date_of_birth?: string | null;
   gender?: 'ذكر' | 'أنثى';
   religion?: 'مسلم' | 'مسيحي';
   identity_number: string;

@@ -15,11 +15,11 @@ import { getIconDesign } from "@/config/iconography";
 const drawerVariants = {
   open: (rtl: boolean) => ({
     x: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.3, ease: [0.32, 0.72, 0, 1] as const },
   }),
   closed: (rtl: boolean) => ({
     x: rtl ? 320 : -320,
-    transition: { duration: 0.25, ease: "easeInOut" },
+    transition: { duration: 0.25, ease: [0.32, 0.72, 0, 1] as const },
   }),
 };
 
