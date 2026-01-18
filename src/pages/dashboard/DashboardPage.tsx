@@ -530,16 +530,31 @@ export default function DashboardPage() {
                   domain={[0, 100]}
                 />
                 <Tooltip
-                  content={(props) =>
-                    renderChartTooltip({
-                      ...props,
-                      payload: props.payload?.map((entry) => ({
-                        ...entry,
-                        name: isArabic ? 'معدل الإغلاق' : 'Closure Rate',
-                        value: `${entry.value}%`,
-                      })),
-                    })
-                  }
+                  content={(props) => {
+                    const mappedPayload = props.payload?.map((entry) => ({
+                      name: isArabic ? 'معدل الإغلاق' : 'Closure Rate',
+                      value: `${entry.value}%`,
+                      color: entry.color,
+                    }));
+                    return (
+                      <div className="rounded-lg border border-border/50 bg-popover/95 p-3 shadow-xl backdrop-blur-sm">
+                        <p className="mb-2 text-xs font-medium text-muted-foreground">
+                          {props.label}
+                        </p>
+                        {mappedPayload?.map((item, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <span
+                              className="h-2 w-2 rounded-full"
+                              style={{ backgroundColor: item.color }}
+                            />
+                            <span className="text-sm font-semibold text-foreground">
+                              {item.name}: {item.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  }}
                 />
                 <Area
                   type="monotone"

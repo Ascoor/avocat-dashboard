@@ -81,17 +81,21 @@ export const usePageManager = (
 
       const previousPage = queryClient.getQueryData<PageContent>(['admin-website-page', slug]);
 
-      const nextPage: PageContent | undefined = previousPage
+      const nextPage = previousPage
         ? {
             ...previousPage,
             title: {
               en: payload.title_en ?? previousPage.title?.en ?? null,
               ar: payload.title_ar ?? previousPage.title?.ar ?? null,
             },
-            content_blocks: payload.content_blocks ?? previousPage.content_blocks ?? [],
+            content_blocks: (payload.content_blocks ?? previousPage.content_blocks ?? []).map(block => ({
+              ...block,
+              type: block.type ?? null,
+            })),
+            content: previousPage.content,
             status: payload.status ?? previousPage.status ?? 'draft',
             updated_at: new Date().toISOString(),
-          }
+          } as PageContent
         : previousPage;
 
       if (nextPage) {

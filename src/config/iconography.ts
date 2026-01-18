@@ -45,6 +45,7 @@ export type IconKey =
   | "database"
   | "notifications"
   | "knowledge"
+  | "chart"
   | "default";
 
 export interface IconDesign {
@@ -185,6 +186,11 @@ const ICON_DESIGNS: Record<IconKey, IconDesign> = {
     BookOpen,
     "linear-gradient(145deg, #9EFFDA 0%, #5BC8F7 100%)",
     "0 14px 30px rgba(91, 200, 247, 0.32)",
+  ),
+  chart: createDesign(
+    BarChart3,
+    "linear-gradient(145deg, #8FA9FF 0%, #4A6BFF 100%)",
+    "0 14px 30px rgba(74, 107, 255, 0.32)",
   ),
 };
 

@@ -23,8 +23,9 @@ import {
   ProcedurePayload,
   ProcedurePlaceType,
   ProcedureType,
-  Lawyer,
+  Lawyer as LegalCaseLawyer,
 } from '@/types/legalCase';
+import { Lawyer as ApiLawyer } from '@/types/lawyers';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProcedureModalProps {
@@ -57,7 +58,7 @@ const ProcedureModal = ({ open, onClose, caseId, initialData, onSuccess }: Proce
   const [form, setForm] = useState<ProcedurePayload>(defaultForm);
   const [procedureTypes, setProcedureTypes] = useState<ProcedureType[]>([]);
   const [placeTypes, setPlaceTypes] = useState<ProcedurePlaceType[]>([]);
-  const [lawyers, setLawyers] = useState<Lawyer[]>([]);
+  const [lawyers, setLawyers] = useState<LegalCaseLawyer[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -71,7 +72,8 @@ const ProcedureModal = ({ open, onClose, caseId, initialData, onSuccess }: Proce
         ]);
         setProcedureTypes(typesRes.data);
         setPlaceTypes(placesRes.data);
-        setLawyers(lawyersRes.data);
+        // Map API lawyers to LegalCase lawyers (convert number id to string)
+        setLawyers(lawyersRes.data.map((l: ApiLawyer) => ({ id: String(l.id), name: l.name, licenseNo: l.law_reg_num, phone: l.phone_number })));
       } catch (error) {
         console.error('Failed to load procedure meta', error);
         toast({
