@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/components/ui/use-toast';
 import BlockManager from '../BlockManager';
 import PreviewPane from './PreviewPane';
-import type { PageFormValues } from './types';
+import type { PageFormValues, BlockFormValue } from './types';
 import usePageManager from '@/hooks/usePageManager';
 import useUserRoles from '@/hooks/useUserRoles';
 import useWorkflowManager from '@/hooks/useWorkflowManager';
@@ -159,8 +159,8 @@ const toPayload = (values: PageFormValues) => {
   });
 
   return {
-    title_en: values.title_en ?? null,
-    title_ar: values.title_ar ?? null,
+    title_en: values.title_en ?? '',
+    title_ar: values.title_ar ?? '',
     content_blocks: contentBlocks,
   };
 };
@@ -313,7 +313,19 @@ const PageEditor: React.FC<PageEditorProps> = ({ slug, title, description }) => 
         clearTimeout(autosaveTimer.current);
       }
 
-      const payload = toPayload(values);
+      // Ensure complete values before calling toPayload
+      const completeValues: PageFormValues = {
+        title_en: values.title_en ?? '',
+        title_ar: values.title_ar ?? '',
+        blocks: (values.blocks ?? []).filter((b): b is BlockFormValue => b !== undefined).map(b => ({
+          id: b.id,
+          key: b.key ?? '',
+          type: b.type ?? null,
+          value_en: b.value_en ?? '',
+          value_ar: b.value_ar ?? '',
+        })),
+      };
+      const payload = toPayload(completeValues);
       autosaveTimer.current = setTimeout(() => {
         void saveDraft(payload, { silent: true })
           .then(() => {

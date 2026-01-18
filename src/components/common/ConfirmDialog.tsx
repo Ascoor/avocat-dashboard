@@ -9,14 +9,16 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 
-interface ConfirmDialogProps {
+export interface ConfirmDialogProps {
   open: boolean;
   title: string;
   description?: string;
   confirmLabel?: string;
   cancelLabel?: string;
+  loading?: boolean;
   onConfirm: () => void;
-  onClose: () => void;
+  onClose?: () => void;
+  onOpenChange?: (open: boolean) => void;
 }
 
 const ConfirmDialog = ({
@@ -25,23 +27,38 @@ const ConfirmDialog = ({
   description,
   confirmLabel = 'تأكيد',
   cancelLabel = 'إلغاء',
+  loading = false,
   onConfirm,
   onClose,
-}: ConfirmDialogProps) => (
-  <AlertDialog open={open} onOpenChange={(next) => !next && onClose()}>
-    <AlertDialogContent>
-      <AlertDialogHeader>
-        <AlertDialogTitle>{title}</AlertDialogTitle>
-        {description && (
-          <AlertDialogDescription>{description}</AlertDialogDescription>
-        )}
-      </AlertDialogHeader>
-      <AlertDialogFooter>
-        <AlertDialogCancel onClick={onClose}>{cancelLabel}</AlertDialogCancel>
-        <AlertDialogAction onClick={onConfirm}>{confirmLabel}</AlertDialogAction>
-      </AlertDialogFooter>
-    </AlertDialogContent>
-  </AlertDialog>
-);
+  onOpenChange,
+}: ConfirmDialogProps) => {
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (!nextOpen) {
+      onClose?.();
+      onOpenChange?.(false);
+    }
+  };
+
+  return (
+    <AlertDialog open={open} onOpenChange={handleOpenChange}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{title}</AlertDialogTitle>
+          {description && (
+            <AlertDialogDescription>{description}</AlertDialogDescription>
+          )}
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel onClick={() => handleOpenChange(false)} disabled={loading}>
+            {cancelLabel}
+          </AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm} disabled={loading}>
+            {loading ? 'جاري...' : confirmLabel}
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+};
 
 export default ConfirmDialog;

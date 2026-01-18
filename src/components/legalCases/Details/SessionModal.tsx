@@ -18,7 +18,8 @@ import {
 } from '@/api/sessions.service';
 import { getCourts } from '@/api/courts.service';
 import { getLawyers } from '@/api/lawyers.service';
-import { Court, Lawyer, LegalSession, LegalSessionPayload, LegalSessionType } from '@/types/legalCase';
+import { Court, Lawyer as LegalCaseLawyer, LegalSession, LegalSessionPayload, LegalSessionType } from '@/types/legalCase';
+import { Lawyer as ApiLawyer } from '@/types/lawyers';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SessionModalProps {
@@ -53,7 +54,7 @@ const SessionModal = ({ open, onClose, caseId, initialData, onSuccess }: Session
   const [form, setForm] = useState<LegalSessionPayload>(defaultForm);
   const [courts, setCourts] = useState<Court[]>([]);
   const [sessionTypes, setSessionTypes] = useState<LegalSessionType[]>([]);
-  const [lawyers, setLawyers] = useState<Lawyer[]>([]);
+  const [lawyers, setLawyers] = useState<LegalCaseLawyer[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -67,7 +68,8 @@ const SessionModal = ({ open, onClose, caseId, initialData, onSuccess }: Session
         ]);
         setCourts(courtsRes.data);
         setSessionTypes(typesRes.data);
-        setLawyers(lawyersRes.data);
+        // Map API lawyers to LegalCase lawyers (convert number id to string)
+        setLawyers(lawyersRes.data.map((l: ApiLawyer) => ({ id: String(l.id), name: l.name, licenseNo: l.law_reg_num, phone: l.phone_number })));
       } catch (error) {
         console.error('Failed to load session meta', error);
         toast({
