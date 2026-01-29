@@ -30,6 +30,9 @@ import WebsiteReportPage from '@/pages/admin/Website/WebsiteReportPage';
 import WorkflowBoardPage from '@/pages/admin/Website/WorkflowBoardPage';
 import ActivityLogPage from '@/pages/admin/Website/ActivityLogPage';
 import NotificationsPage from '@/pages/admin/Website/NotificationsPage';
+
+// AVOCAT Dashboard Pages
+import { TasksPage, DocumentsPage, BillingPage, ReportsPage, TeamPage, SettingsPage } from '@/pages/avocat';
 import { shellContainer } from '@/components/layout/layout-classes';
 import { cn } from '@/lib/utils';
 
@@ -107,10 +110,17 @@ const router = createBrowserRouter(
           <Route path=":section" element={<AdminWebsitePage />} />
         </Route>
 
+        {/* 📋 AVOCAT Dashboard Pages */}
+        <Route path="tasks" element={<TasksPage />} />
+        <Route path="documents" element={<DocumentsPage />} />
+        <Route path="billing" element={<BillingPage />} />
+        <Route path="reports" element={<ReportsPage />} />
+        <Route path="team" element={<TeamPage />} />
+        <Route path="avocat-settings" element={<SettingsPage />} />
+
         {/* ⏳ Coming Soon */}
         <Route path="sessions" element={<DashboardPlaceholder sectionKey="sessions" />} />
         <Route path="procedures" element={<DashboardPlaceholder sectionKey="procedures" />} />
-        <Route path="reports" element={<DashboardPlaceholder sectionKey="reports" />} />
         <Route path="settings" element={<DashboardPlaceholder sectionKey="settings" />} />
         <Route path="users_roles" element={<DashboardPlaceholder sectionKey="users_roles" />} />
         <Route path="archive" element={<DashboardPlaceholder sectionKey="archive" />} />
