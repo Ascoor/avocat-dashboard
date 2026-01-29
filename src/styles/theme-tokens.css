@@ -3,9 +3,8 @@
 All colors MUST be HSL.
 
 */
-@layer base {
-  :root {
-    /* AVOCAT LAW FIRM - LIGHT MODE (ROYAL NAVY IDENTITY) */
+:root {
+  /* AVOCAT LAW FIRM - LIGHT MODE (ROYAL NAVY IDENTITY) */
 
     /* SURFACE & NEUTRALS */
     --surface: 0 0% 100%;
@@ -337,40 +336,20 @@ All colors MUST be HSL.
 
     --destructive: 0 63% 50%;
     --destructive-foreground: 210 40% 96%;
-  }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+/* Base styles moved to index.css to ensure Tailwind classes are available */
 
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: 'cv11', 'ss01';
-  }
+/* ═══════════════════════════════════════════════════════════════ */
+/* DESIGN TOKENS UTILITY CLASSES */
+/* ═══════════════════════════════════════════════════════════════ */
 
-  /* RTL Support */
-  [dir="rtl"] {
-    direction: rtl;
-  }
-
-  [dir="ltr"] {
-    direction: ltr;
-  }
+/* ─────────────────────────────────────────────────────────────── */
+/* GRADIENT UTILITIES */
+/* ─────────────────────────────────────────────────────────────── */
+.gradient-hero {
+  background: var(--gradient-hero);
 }
-
-@layer utilities {
-  /* ═══════════════════════════════════════════════════════════════ */
-  /* DESIGN TOKENS UTILITY CLASSES */
-  /* ═══════════════════════════════════════════════════════════════ */
-
-  /* ─────────────────────────────────────────────────────────────── */
-  /* GRADIENT UTILITIES */
-  /* ─────────────────────────────────────────────────────────────── */
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
 
   .gradient-gold {
     background: var(--gradient-gold);
@@ -545,7 +524,6 @@ All colors MUST be HSL.
     gap: var(--spacing-2xl);
   }
 
-  .space-legal-3xl {
-    gap: var(--spacing-3xl);
-  }
+.space-legal-3xl {
+  gap: var(--spacing-3xl);
 }
