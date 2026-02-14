@@ -1,53 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl" class="dark">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avocat - Legal Management Platform | Smart Law Practice System</title>
-    <meta name="description" content="Transform your legal practice with Avocat's comprehensive legal management platform. Manage clients, cases, sessions, and reports efficiently with our intelligent legal system." />
-    <meta name="keywords" content="legal management, law firm software, case management, legal practice, avocat, law system, legal technology" />
-    <meta name="author" content="Avocat Legal Systems" />
-    <link rel="canonical" href="https://avocat-legal.com" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    
-    <!-- OpenGraph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://avocat-legal.com" />
-    <meta property="og:title" content="Avocat - Legal Management Platform | Smart Law Practice System" />
-    <meta property="og:description" content="Transform your legal practice with Avocat's comprehensive legal management platform. Manage clients, cases, sessions, and reports efficiently." />
-    <meta property="og:image" content="https://avocat-legal.com/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://avocat-legal.com" />
-    <meta name="twitter:title" content="Avocat - Legal Management Platform" />
-    <meta name="twitter:description" content="Transform your legal practice with Avocat's comprehensive legal management platform." />
-    <meta name="twitter:image" content="https://avocat-legal.com/og-image.jpg" />
+    <!-- Meta Tags -->
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Avocat Legal Systems",
-      "url": "https://avocat-legal.com",
-      "logo": "https://avocat-legal.com/logo.png",
-      "description": "Legal management platform for modern law practices",
-      "sameAs": [
-        "https://twitter.com/avocat_legal",
-        "https://linkedin.com/company/avocat-legal"
-      ]
-    }
-    </script>
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Avocat System For Lawyers Offices - مكتب محاماة أغوكات: تعد أفوكات أول منظومة تغير قواعد العمل في مجال المحاماة، حيث تساهم أدواتها التكنولوجية المتقدمة في تبسيط سير العمل وإدارة القضايا بكفاءة وتقديم خدمات استثنائية للعملاء. اكتشف مستقبل ممارسة المحاماة مع الحل الرقمي الشامل المقدم من أفوكات."
+    />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta
+      name="keywords"
+      content="مكتب محاماة, أفوكات, محامون, تقنية, منظومة, قضايا"
+    />
+    <meta name="author" content="Your Name or Your Company Name" />
+
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo512.png" />
+
+    <!-- Manifest for Progressive Web App -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <title>Avocat - أفوكات</title>
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div  class="min-h-screen" id="root"></div>
+
+    <!-- Assuming you are using Vite, you need to update the script tag to load the Vite client -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

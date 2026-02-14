@@ -5,10 +5,10 @@ import tailwindcssAnimate from "tailwindcss-animate";
 const config: Config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -76,6 +76,34 @@ const config: Config = {
           foreground: "hsl(var(--accent-foreground))",
           mint: "hsl(var(--accent-mint))",
           amber: "hsl(var(--accent-amber))",
+        },
+
+        /* APP SEMANTIC COLORS */
+        app: {
+          accent: "var(--app-accent)",
+          "accent-strong": "var(--app-accent-strong)",
+          muted: "var(--app-muted)",
+          success: "var(--app-success)",
+          warning: "var(--app-warning)",
+          danger: "var(--app-danger)",
+          info: "var(--app-info)",
+          "accent-soft": "var(--app-accent-soft)",
+          "success-soft": "var(--app-success-soft)",
+          "warning-soft": "var(--app-warning-soft)",
+          "info-soft": "var(--app-info-soft)",
+        },
+
+        /* CHART COLORS */
+        chart: {
+          1: "var(--chart-1)",
+          2: "var(--chart-2)",
+          3: "var(--chart-3)",
+          4: "var(--chart-4)",
+          5: "var(--chart-5)",
+          6: "var(--chart-6)",
+          text: "var(--chart-text)",
+          grid: "var(--chart-grid)",
+          tooltip: "var(--chart-tooltip-bg)",
         },
 
         /* EXCLUSIVE & NEON */
